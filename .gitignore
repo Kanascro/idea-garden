@@ -30,7 +30,17 @@ yarn-error.log*
 
 # vercel
 .vercel
+AGENTS.md
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Obsidian
+.obsidian/
+
+# Windows file
+Thumbs.db
+
+# Syncthing
+.stfolder/
