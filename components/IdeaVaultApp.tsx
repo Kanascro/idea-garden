@@ -7,6 +7,7 @@ import { HomeHeader } from "./sections/HomeHeader";
 import { AboutSection } from "./sections/AboutSection";
 import { UsesSection } from "./sections/UsesSection";
 import { IdeasSection } from "./sections/IdeasSection";
+import { ALL_FILTER } from "./sections/hooks/useIdeaSearch";
 
 type Props = {
   initialData: IdeaIndex;
@@ -19,6 +20,9 @@ export default function IdeaVaultApp({ initialData }: Props) {
   const [visibleIdea, setVisibleIdea] = useState<IdeaItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [query, setQuery] = useState("");
+  const [selectedTopFolder, setSelectedTopFolder] = useState(ALL_FILTER);
+  const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
 
   useEffect(() => {
     const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -103,6 +107,26 @@ export default function IdeaVaultApp({ initialData }: Props) {
     window.setTimeout(() => setCopied(false), 1800);
   }
 
+  function openIdeasWithTrail(trail: string[], index: number) {
+    const topFolder = trail[0] ?? ALL_FILTER;
+    const categoryPrefix =
+      index <= 0 ? ALL_FILTER : trail.slice(1, index + 1).join(" / ");
+
+    setHomeSection("ideas");
+    setQuery("");
+    setSelectedTopFolder(topFolder);
+    setSelectedCategory(categoryPrefix);
+
+    setIsModalOpen(false);
+    window.setTimeout(() => {
+      setVisibleIdea(null);
+      requestAnimationFrame(() => {
+        const ideasSection = document.getElementById("ideas-section");
+        ideasSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }, 200);
+  }
+
   return (
     <main className="min-h-screen px-4 py-6 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
@@ -114,7 +138,16 @@ export default function IdeaVaultApp({ initialData }: Props) {
         {homeSection === "about" && <AboutSection />}
         {homeSection === "uses" && <UsesSection />}
         {homeSection === "ideas" && (
-          <IdeasSection ideas={initialData.ideas} onOpenIdea={openIdea} />
+          <IdeasSection
+            ideas={initialData.ideas}
+            onOpenIdea={openIdea}
+            query={query}
+            setQuery={setQuery}
+            selectedTopFolder={selectedTopFolder}
+            setSelectedTopFolder={setSelectedTopFolder}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
         )}
       </div>
 
@@ -135,9 +168,20 @@ export default function IdeaVaultApp({ initialData }: Props) {
               {/* Mobile header */}
               <div className="sm:hidden">
                 <div className="min-w-0">
-                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-ink/65">
-                    {visibleIdea.categoryTrail.join(" / ")}
-                  </p>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.72rem] uppercase tracking-[0.24em] text-ink/65">
+                    {visibleIdea.categoryTrail.map((segment, index) => (
+                      <span key={`${segment}-${index}`} className="flex items-center gap-x-2">
+                        <button
+                          type="button"
+                          onClick={() => openIdeasWithTrail(visibleIdea.categoryTrail, index)}
+                          className="uppercase transition hover:text-ink"
+                        >
+                          {segment}
+                        </button>
+                        {index < visibleIdea.categoryTrail.length - 1 && <span>/</span>}
+                      </span>
+                    ))}
+                  </div>
 
                   <h2 className="mt-2 pr-12 text-[2.2rem] font-semibold leading-[1.02] tracking-tight">
                     {visibleIdea.title}
@@ -157,9 +201,20 @@ export default function IdeaVaultApp({ initialData }: Props) {
               {/* Desktop header */}
               <div className="hidden sm:flex sm:items-start sm:justify-between sm:gap-4">
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-[0.2em] text-ink/65">
-                    {visibleIdea.categoryTrail.join(" / ")}
-                  </p>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs uppercase tracking-[0.2em] text-ink/65">
+                    {visibleIdea.categoryTrail.map((segment, index) => (
+                      <span key={`${segment}-${index}`} className="flex items-center gap-x-2">
+                        <button
+                          type="button"
+                          onClick={() => openIdeasWithTrail(visibleIdea.categoryTrail, index)}
+                          className="uppercase transition hover:text-ink"
+                        >
+                          {segment}
+                        </button>
+                        {index < visibleIdea.categoryTrail.length - 1 && <span>/</span>}
+                      </span>
+                    ))}
+                  </div>
 
                   <h2 className="mt-2 text-4xl font-semibold leading-[0.95] tracking-tight">
                     {visibleIdea.title}

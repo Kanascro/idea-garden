@@ -69,8 +69,11 @@ export function useIdeaSearch({
         for (const idea of ideas) {
             const top = idea.categoryTrail[0] ?? UNCATEGORIZED;
             if (selectedTopFolder !== ALL_FILTER && top !== selectedTopFolder) continue;
-            if (idea.categoryTrail.length <= 1) continue;
-            set.add(idea.categoryTrail.slice(1).join(" / "));
+
+            const tail = idea.categoryTrail.slice(1);
+            for (let i = 0; i < tail.length; i += 1) {
+                set.add(tail.slice(0, i + 1).join(" / "));
+            }
         }
 
         return [ALL_FILTER, ...Array.from(set).sort((a, b) => a.localeCompare(b))];
@@ -86,9 +89,13 @@ export function useIdeaSearch({
         }
 
         if (selectedCategory !== ALL_FILTER) {
-            next = next.filter(
-                (idea) => idea.categoryTrail.slice(1).join(" / ") === selectedCategory
-            );
+            next = next.filter((idea) => {
+                const tailPath = idea.categoryTrail.slice(1).join(" / ");
+                return (
+                    tailPath === selectedCategory ||
+                    tailPath.startsWith(`${selectedCategory} /`)
+                );
+            });
         }
 
         if (!query.trim()) return next;
