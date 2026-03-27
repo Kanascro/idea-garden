@@ -17,36 +17,6 @@ type Props = {
   setSelectedCategory: (value: string) => void;
 };
 
-function normalize(value: string) {
-  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
-
-function buildSearchText(idea: IdeaItem) {
-  return normalize(
-    [
-      idea.title,
-      idea.categoryTrail.join(" "),
-      idea.content.coreIdea,
-      idea.content.structure,
-      idea.content.humanSignal,
-    ].join(" ")
-  );
-}
-
-function scoreIdea(idea: IdeaItem, query: string) {
-  const q = normalize(query).trim();
-  if (!q) return 0;
-
-  const hay = buildSearchText(idea);
-  let score = 0;
-
-  if (normalize(idea.title).includes(q)) score += 8;
-  if (normalize(idea.categoryTrail.join(" ")).includes(q)) score += 4;
-  if (hay.includes(q)) score += 2;
-
-  return score;
-}
-
 export function IdeasSection({
   ideas,
   onOpenIdea,

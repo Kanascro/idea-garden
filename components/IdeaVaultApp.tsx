@@ -16,6 +16,17 @@ type Props = {
 
 export type HomeSection = "about" | "ideas" | "uses";
 
+function shuffleIdeas<T>(items: T[]) {
+  const next = [...items];
+
+  for (let i = next.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [next[i], next[j]] = [next[j], next[i]];
+  }
+
+  return next;
+}
+
 export default function IdeaVaultApp({ initialData }: Props) {
   const [homeSection, setHomeSection] = useState<HomeSection>("ideas");
   const [visibleIdea, setVisibleIdea] = useState<IdeaItem | null>(null);
@@ -25,12 +36,13 @@ export default function IdeaVaultApp({ initialData }: Props) {
   const [selectedTopFolder, setSelectedTopFolder] = useState(ALL_FILTER);
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [theme, setTheme] = useState<"light" | "dark" | "rainbow">("light");
+  const [shuffledIdeas] = useState(() => shuffleIdeas(initialData.ideas));
 
   useEffect(() => {
     const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
     if (!hash) return;
 
-    const found = initialData.ideas.find((idea) => idea.slug === hash);
+    const found = shuffledIdeas.find((idea) => idea.slug === hash);
     if (found) {
       setVisibleIdea(found);
       requestAnimationFrame(() => {
@@ -39,7 +51,7 @@ export default function IdeaVaultApp({ initialData }: Props) {
         });
       });
     }
-  }, [initialData.ideas]);
+  }, [shuffledIdeas]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -146,7 +158,7 @@ export default function IdeaVaultApp({ initialData }: Props) {
         {homeSection === "uses" && <UsesSection />}
         {homeSection === "ideas" && (
           <IdeasSection
-            ideas={initialData.ideas}
+            ideas={shuffledIdeas}
             onOpenIdea={openIdea}
             query={query}
             setQuery={setQuery}
