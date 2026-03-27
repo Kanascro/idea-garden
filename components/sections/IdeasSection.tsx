@@ -85,25 +85,29 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
 
   return (
     <section className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
-      <aside className="relative overflow-hidden rounded-[2rem] border border-white/60 glass-panel p-4 shadow-neu lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)]">
+      <aside
+        className={`relative overflow-hidden rounded-[2rem] border border-white/60 glass-panel px-3 pt-2 shadow-neu lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] ${filtersOpen ? "pb-3" : "pb-2"
+          } lg:p-4`}
+      >
         <div
           ref={asideRef}
           className="lg:max-h-[calc(100vh-4rem)] lg:overflow-y-auto no-scrollbar"
         >
           <button
             onClick={() => setFiltersOpen((v) => !v)}
-            className="mb-4 flex w-full items-center justify-between rounded-[1.25rem] border border-white/70 bg-white/60 px-4 py-3 text-sm font-medium shadow-neuSoft lg:hidden"
+            className={`${filtersOpen ? "mb-2" : "mb-0"} flex w-full items-center justify-between px-2 py-2 text-left text-sm font-medium lg:hidden`}
+            aria-expanded={filtersOpen}
+            aria-controls="ideas-filters-panel"
           >
             <span>Filters</span>
-            <span>{filtersOpen ? "−" : "+"}</span>
+            <span className="text-xl leading-none">{filtersOpen ? "−" : "+"}</span>
           </button>
-
           {filtersOpen && (
-            <>
+            <div id="ideas-filters-panel" className="mt-3 space-y-4">
               <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
                 <label className="mb-2 flex items-center gap-2 text-sm font-medium text-ink/75">
                   <Search className="h-4 w-4" />
-                  Search the vault
+                  Search
                 </label>
 
                 <input
@@ -114,7 +118,7 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
                 />
               </div>
 
-              <div className="mt-4 rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
+              <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
                 <p className="mb-3 text-sm font-medium text-ink/75">Categories</p>
                 <div className="space-y-2">
                   {topFolders.map((entry) => (
@@ -135,7 +139,7 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
+              <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
                 <p className="mb-3 text-sm font-medium text-ink/75">Tags</p>
                 <div className="flex max-h-[28rem] flex-wrap gap-2 overflow-auto pr-1">
                   {categories.map((category) => (
@@ -152,7 +156,7 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
                   ))}
                 </div>
               </div>
-            </>
+            </div>
           )}
         </div>
 

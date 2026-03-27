@@ -5,11 +5,14 @@ export function useResponsiveFilters() {
 
     useEffect(() => {
         function syncFiltersForScreen() {
-            setFiltersOpen(window.innerWidth >= 1024);
+            if (window.innerWidth >= 1024) {
+                setFiltersOpen(true);
+            }
         }
 
         syncFiltersForScreen();
         window.addEventListener("resize", syncFiltersForScreen);
+
         return () => window.removeEventListener("resize", syncFiltersForScreen);
     }, []);
 
