@@ -3,6 +3,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Search } from "lucide-react";
 import type { IdeaItem } from "../../lib/types";
+import { useIdeaSearch, ALL_FILTER } from "./hooks/useIdeaSearch";
+import { useResponsiveFilters } from "./hooks/useResponsiveFilters";
+
+const UNCATEGORIZED = "Uncategorized";
 
 type Props = {
   ideas: IdeaItem[];
@@ -41,78 +45,23 @@ function scoreIdea(idea: IdeaItem, query: string) {
 
 export function IdeasSection({ ideas, onOpenIdea }: Props) {
   const [query, setQuery] = useState("");
-  const [selectedTopFolder, setSelectedTopFolder] = useState("All");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const { filtersOpen, setFiltersOpen } = useResponsiveFilters();
   const [hasOverflow, setHasOverflow] = useState(false);
   const asideRef = useRef<HTMLDivElement | null>(null);
 
-  const topFolders = useMemo(() => {
-    const counts = new Map<string, number>();
+  const [selectedTopFolder, setSelectedTopFolder] = useState(ALL_FILTER);
+  const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
 
-    for (const idea of ideas) {
-      const top = idea.categoryTrail[0] ?? "Uncategorized";
-      counts.set(top, (counts.get(top) ?? 0) + 1);
-    }
-
-    return [
-      { name: "All", count: ideas.length },
-      ...Array.from(counts.entries())
-        .sort((a, b) => a[0].localeCompare(b[0]))
-        .map(([name, count]) => ({ name, count })),
-    ];
-  }, [ideas]);
-
-  const categories = useMemo(() => {
-    const set = new Set<string>();
-
-    for (const idea of ideas) {
-      const top = idea.categoryTrail[0] ?? "Uncategorized";
-      if (selectedTopFolder !== "All" && top !== selectedTopFolder) continue;
-      if (idea.categoryTrail.length <= 1) continue;
-      set.add(idea.categoryTrail.slice(1).join(" / "));
-    }
-
-    return ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
-  }, [ideas, selectedTopFolder]);
-
-  const filteredIdeas = useMemo(() => {
-    let next = ideas;
-
-    if (selectedTopFolder !== "All") {
-      next = next.filter(
-        (idea) => (idea.categoryTrail[0] ?? "Uncategorized") === selectedTopFolder
-      );
-    }
-
-    if (selectedCategory !== "All") {
-      next = next.filter(
-        (idea) => idea.categoryTrail.slice(1).join(" / ") === selectedCategory
-      );
-    }
-
-    if (!query.trim()) return next;
-
-    return [...next]
-      .map((idea) => ({ idea, score: scoreIdea(idea, query) }))
-      .filter((entry) => entry.score > 0)
-      .sort((a, b) => b.score - a.score || a.idea.title.localeCompare(b.idea.title))
-      .map((entry) => entry.idea);
-  }, [ideas, query, selectedCategory, selectedTopFolder]);
+  const { topFolders, categories, filteredIdeas } = useIdeaSearch({
+    ideas,
+    query,
+    selectedTopFolder,
+    selectedCategory,
+  });
 
   useEffect(() => {
-    setSelectedCategory("All");
+    setSelectedCategory(ALL_FILTER);
   }, [selectedTopFolder]);
-
-  useEffect(() => {
-    function syncFiltersForScreen() {
-      setFiltersOpen(window.innerWidth >= 1024);
-    }
-
-    syncFiltersForScreen();
-    window.addEventListener("resize", syncFiltersForScreen);
-    return () => window.removeEventListener("resize", syncFiltersForScreen);
-  }, []);
 
   useEffect(() => {
     function check() {
@@ -175,8 +124,8 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
                       key={entry.name}
                       onClick={() => setSelectedTopFolder(entry.name)}
                       className={`flex w-full items-center justify-between rounded-2xl px-3 py-2 text-sm transition ${selectedTopFolder === entry.name
-                          ? "bg-white shadow-neuSoft"
-                          : "bg-white/70 hover:bg-white"
+                        ? "bg-white shadow-neuSoft"
+                        : "bg-white/70 hover:bg-white"
                         }`}
                     >
                       <span>{entry.name}</span>
@@ -196,8 +145,8 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
                       key={category}
                       onClick={() => setSelectedCategory(category)}
                       className={`rounded-full px-3 py-2 text-xs transition ${selectedCategory === category
-                          ? "bg-white shadow-neuSoft"
-                          : "border border-white/70 bg-white/55 hover:bg-white"
+                        ? "bg-white shadow-neuSoft"
+                        : "border border-white/70 bg-white/55 hover:bg-white"
                         }`}
                     >
                       {category}
