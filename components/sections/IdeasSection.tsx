@@ -167,12 +167,12 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
           {filteredIdeas.length} visible of {ideas.length} ideas
         </p>
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(175px,1fr))] gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fill,minmax(175px,1fr))]">
           {filteredIdeas.map((idea) => (
             <button
               key={idea.id}
               onClick={() => onOpenIdea(idea)}
-              className="group aspect-square rounded-[1.7rem] border border-white/70 bg-white/60 p-4 text-left shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-white"
+              className="group aspect-[0.92] rounded-[1.6rem] border border-white/70 bg-white/60 p-5 text-left shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-white sm:aspect-square sm:p-4"
             >
               <p className="text-xs uppercase tracking-[0.18em] text-ink/45">
                 {idea.categoryTrail[idea.categoryTrail.length - 1] ?? "Idea"}

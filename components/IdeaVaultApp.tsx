@@ -121,42 +121,68 @@ export default function IdeaVaultApp({ initialData }: Props) {
       {visibleIdea && (
         <div
           onClick={closeIdea}
-          className={`fixed inset-0 z-50 flex items-end justify-center bg-ink/25 p-0 backdrop-blur-[8px] sm:items-center sm:p-6 transition-opacity duration-200 ${isModalOpen ? "opacity-100" : "opacity-0"
+          className={`fixed inset-0 z-50 flex items-start justify-center bg-ink/25 p-0 backdrop-blur-[8px] transition-opacity duration-200 sm:items-center sm:p-6 ${isModalOpen ? "opacity-100" : "opacity-0"
             }`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`glass-panel relative max-h-[92vh] w-full max-w-4xl overflow-auto overscroll-contain rounded-t-[2rem] border border-white/70 p-5 shadow-neu sm:rounded-[2rem] sm:p-8 transform transition-all duration-200 ${isModalOpen
+            className={`glass-panel relative max-h-[100dvh] w-full overflow-auto overscroll-contain rounded-none px-5 pb-6 pt-6 shadow-none transition-all duration-200 sm:max-h-[92vh] sm:max-w-4xl sm:rounded-[2rem] border border-white/70 sm:p-8 sm:shadow-neu ${isModalOpen
               ? "translate-y-0 scale-100 opacity-100"
               : "translate-y-6 scale-[0.98] opacity-0"
               }`}
           >
-            <div className="mb-5 flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-ink/65">
-                  {visibleIdea.categoryTrail.join(" / ")}
-                </p>
-                <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-                  {visibleIdea.title}
-                </h2>
-              </div>
+            <div className="mb-6 relative">
+              {/* Mobile header */}
+              <div className="sm:hidden">
+                <div className="min-w-0">
+                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-ink/65">
+                    {visibleIdea.categoryTrail.join(" / ")}
+                  </p>
 
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => handleShare(visibleIdea)}
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/70 bg-white/70 px-3 py-2 text-sm shadow-neuSoft transition hover:bg-white"
-                >
-                  <Share2 className="h-4 w-4" />
-                  {copied ? "Copied" : "Share"}
-                </button>
+                  <h2 className="mt-2 pr-12 text-[2.2rem] font-semibold leading-[1.02] tracking-tight">
+                    {visibleIdea.title}
+                  </h2>
+                </div>
 
+                {/* X (mobile only) */}
                 <button
                   onClick={closeIdea}
-                  className="rounded-2xl border border-white/70 bg-white/70 p-2 shadow-neuSoft transition hover:bg-white"
+                  className="absolute right-2 top-2 rounded-2xl border border-white/70 bg-white/70 p-2 shadow-neuSoft transition hover:bg-white"
                   aria-label="Close idea"
                 >
                   <X className="h-5 w-5" />
                 </button>
+              </div>
+
+              {/* Desktop header */}
+              <div className="hidden sm:flex sm:items-start sm:justify-between sm:gap-4">
+                <div className="min-w-0">
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink/65">
+                    {visibleIdea.categoryTrail.join(" / ")}
+                  </p>
+
+                  <h2 className="mt-2 text-4xl font-semibold leading-[0.95] tracking-tight">
+                    {visibleIdea.title}
+                  </h2>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleShare(visibleIdea)}
+                    className="inline-flex items-center gap-2 rounded-2xl border border-white/70 bg-white/70 px-3 py-2 text-sm shadow-neuSoft transition hover:bg-white"
+                  >
+                    <Share2 className="h-4 w-4" />
+                    {copied ? "Copied" : "Share"}
+                  </button>
+
+                  <button
+                    onClick={closeIdea}
+                    className="rounded-2xl border border-white/70 bg-white/70 p-2 shadow-neuSoft transition hover:bg-white"
+                    aria-label="Close idea"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -179,6 +205,17 @@ export default function IdeaVaultApp({ initialData }: Props) {
                 </p>
               </blockquote>
             </section>
+
+            {/* Mobile-only Share (kept at bottom) */}
+            <div className="mt-4 flex justify-end sm:hidden">
+              <button
+                onClick={() => handleShare(visibleIdea)}
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/70 bg-white/70 px-3 py-2 text-sm shadow-neuSoft transition hover:bg-white"
+              >
+                <Share2 className="h-4 w-4" />
+                {copied ? "Copied" : "Share"}
+              </button>
+            </div>
           </div>
         </div>
       )}
