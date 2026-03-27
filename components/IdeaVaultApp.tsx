@@ -126,9 +126,9 @@ export default function IdeaVaultApp({ initialData }: Props) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`glass-panel relative max-h-[92vh] w-full max-w-4xl overflow-auto rounded-t-[2rem] border border-white/70 p-5 shadow-neu sm:rounded-[2rem] sm:p-8 transform transition-all duration-200 ${isModalOpen
-                ? "translate-y-0 scale-100 opacity-100"
-                : "translate-y-6 scale-[0.98] opacity-0"
+            className={`glass-panel relative max-h-[92vh] w-full max-w-4xl overflow-auto overscroll-contain rounded-t-[2rem] border border-white/70 p-5 shadow-neu sm:rounded-[2rem] sm:p-8 transform transition-all duration-200 ${isModalOpen
+              ? "translate-y-0 scale-100 opacity-100"
+              : "translate-y-6 scale-[0.98] opacity-0"
               }`}
           >
             <div className="mb-5 flex items-start justify-between gap-4">

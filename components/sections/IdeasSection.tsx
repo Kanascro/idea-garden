@@ -6,8 +6,6 @@ import type { IdeaItem } from "../../lib/types";
 import { useIdeaSearch, ALL_FILTER } from "./hooks/useIdeaSearch";
 import { useResponsiveFilters } from "./hooks/useResponsiveFilters";
 
-const UNCATEGORIZED = "Uncategorized";
-
 type Props = {
   ideas: IdeaItem[];
   onOpenIdea: (idea: IdeaItem) => void;
@@ -111,7 +109,7 @@ export function IdeasSection({ ideas, onOpenIdea }: Props) {
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Title, category, structure, signal..."
+                  placeholder="Title, content..."
                   className="w-full rounded-2xl border border-white/70 bg-white px-4 py-3 text-sm outline-none ring-0 placeholder:text-ink/40"
                 />
               </div>

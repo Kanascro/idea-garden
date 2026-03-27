@@ -30,7 +30,7 @@ export function UsesSection() {
                             className="relative font-semibold text-indigo-500 transition hover:text-indigo-600"
                         >
                             <span className="relative z-10">reach out</span>
-                            <span className="absolute inset-0 -z-0 rounded-lg bg-indigo-200 opacity-0 blur-md transition group-hover:opacity-60"></span>
+                            <span className="absolute inset-0 -z-0 rounded-lg bg-indigo-200 opacity-0 blur-md transition"></span>
                         </a>
                         .
                     </MiniPanel>
