@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import { Search } from "lucide-react";
 import type { IdeaItem } from "../../lib/types";
@@ -62,6 +60,12 @@ export function IdeasSection({
   const { filtersOpen, setFiltersOpen } = useResponsiveFilters();
   const [hasOverflow, setHasOverflow] = useState(false);
   const asideRef = useRef<HTMLDivElement | null>(null);
+  const gridRef = useRef<HTMLDivElement | null>(null);
+  const [columnsPerBatch, setColumnsPerBatch] = useState<number | null>(null);
+  const INITIAL_ROWS = 6;
+  const MORE_ROWS = 3;
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [newlyAddedIds, setNewlyAddedIds] = useState<string[]>([]);
 
   const { topFolders, categories, filteredIdeas } = useIdeaSearch({
     ideas,
@@ -69,10 +73,26 @@ export function IdeasSection({
     selectedTopFolder,
     selectedCategory,
   });
+  const initialBatchSize =
+    columnsPerBatch === null ? 0 : Math.max(columnsPerBatch * INITIAL_ROWS, 1);
+
+  const moreBatchSize =
+    columnsPerBatch === null ? 0 : Math.max(columnsPerBatch * MORE_ROWS, 1);
+
+  const hasMoreIdeas = visibleCount < filteredIdeas.length;
+  const visibleIdeaCount = hasMoreIdeas
+    ? Math.max(visibleCount - 1, 0)
+    : visibleCount;
+  const visibleIdeas = filteredIdeas.slice(0, visibleIdeaCount);
 
   useEffect(() => {
     setSelectedCategory(ALL_FILTER);
   }, [selectedTopFolder]);
+
+  useEffect(() => {
+    if (initialBatchSize === 0) return;
+    setVisibleCount(initialBatchSize);
+  }, [query, selectedTopFolder, selectedCategory, initialBatchSize]);
 
   useEffect(() => {
     function check() {
@@ -95,6 +115,78 @@ export function IdeasSection({
       window.removeEventListener("resize", check);
     };
   }, [filtersOpen]);
+
+  useEffect(() => {
+    setNewlyAddedIds([]);
+  }, [query, selectedTopFolder, selectedCategory]);
+
+  useEffect(() => {
+    function measureColumns() {
+      const el = gridRef.current;
+      if (!el) return;
+
+      const styles = window.getComputedStyle(el);
+      const template = styles.gridTemplateColumns;
+
+      if (!template) return;
+
+      const count = template
+        .split(" ")
+        .map((part) => part.trim())
+        .filter(Boolean).length;
+
+      if (count > 0) {
+        setColumnsPerBatch(count);
+      }
+    }
+
+    measureColumns();
+
+    const el = gridRef.current;
+    if (!el) return;
+
+    const observer = new ResizeObserver(() => {
+      measureColumns();
+    });
+
+    observer.observe(el);
+    window.addEventListener("resize", measureColumns);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measureColumns);
+    };
+  }, []);
+
+  useEffect(() => {
+    setNewlyAddedIds([]);
+  }, [query, selectedTopFolder, selectedCategory]);
+
+  function showMoreIdeas() {
+    if (moreBatchSize === 0) return;
+    const nextVisibleCount = Math.min(
+      visibleCount + moreBatchSize,
+      filteredIdeas.length
+    );
+
+    const nextHasMoreIdeas = nextVisibleCount < filteredIdeas.length;
+    const nextVisibleIdeaCount = nextHasMoreIdeas
+      ? Math.max(nextVisibleCount - 1, 0)
+      : nextVisibleCount;
+
+    const nextVisibleIdeas = filteredIdeas.slice(0, nextVisibleIdeaCount);
+    const currentIds = new Set(visibleIdeas.map((idea) => idea.id));
+    const addedIds = nextVisibleIdeas
+      .filter((idea) => !currentIds.has(idea.id))
+      .map((idea) => idea.id);
+
+    setNewlyAddedIds(addedIds);
+    setVisibleCount(nextVisibleCount);
+
+    window.setTimeout(() => {
+      setNewlyAddedIds([]);
+    }, 260);
+  }
 
   return (
     <section
@@ -184,15 +276,22 @@ export function IdeasSection({
 
       <section className="rounded-[2rem] border border-white/60 glass-panel p-4 shadow-neu sm:p-5">
         <p className="mb-4 text-sm text-ink/65">
-          {filteredIdeas.length} visible of {ideas.length} ideas
+          {columnsPerBatch === null
+            ? "Loading ideas..."
+            : `Showing ${visibleIdeas.length} of ${filteredIdeas.length} matching ideas${filteredIdeas.length !== ideas.length ? ` (${ideas.length} total)` : ""
+            }`}
         </p>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fill,minmax(175px,1fr))]">
-          {filteredIdeas.map((idea) => (
+        <div
+          ref={gridRef}
+          className="grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fill,minmax(175px,1fr))]"
+        >
+          {visibleIdeas.map((idea) => (
             <button
               key={idea.id}
               onClick={() => onOpenIdea(idea)}
-              className="group flex aspect-[0.92] flex-col justify-start rounded-[1.6rem] border border-white/70 bg-white/60 p-5 text-left shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-white sm:aspect-square sm:p-4"
+              className={`group flex aspect-[0.92] flex-col justify-start rounded-[1.6rem] border border-white/70 bg-white/60 p-5 text-left shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-white sm:aspect-square sm:p-4 ${newlyAddedIds.includes(idea.id) ? "animate-idea-in" : ""
+                }`}
             >
               <p className="text-xs uppercase tracking-[0.18em] text-ink/45">
                 {idea.categoryTrail[idea.categoryTrail.length - 1] ?? "Idea"}
@@ -203,6 +302,19 @@ export function IdeasSection({
               </h3>
             </button>
           ))}
+
+          {hasMoreIdeas && (
+            <button
+              key="more-card"
+              onClick={showMoreIdeas}
+              className="group flex aspect-[0.92] flex-col items-center justify-center rounded-[1.6rem] border border-white/70 bg-[linear-gradient(145deg,rgba(255,238,244,0.9),rgba(255,245,248,0.85))] p-5 text-center shadow-neuSoft transition hover:-translate-y-0.5 hover:shadow-neu sm:aspect-square sm:p-4"
+              aria-label="Load more ideas"
+            >
+              <h3 className="mt-3 line-clamp-4 text-base font-semibold leading-6 tracking-[0.06em] text-ink sm:text-lg">
+                Show more...
+              </h3>
+            </button>
+          )}
         </div>
       </section>
     </section>

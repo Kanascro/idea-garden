@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Share2, Sparkles, X } from "lucide-react";
+import { Share2, X } from "lucide-react";
 import type { IdeaIndex, IdeaItem } from "../lib/types";
 import { HomeHeader } from "./sections/HomeHeader";
 import { AboutSection } from "./sections/AboutSection";
 import { UsesSection } from "./sections/UsesSection";
 import { IdeasSection } from "./sections/IdeasSection";
 import { ALL_FILTER } from "./sections/hooks/useIdeaSearch";
+import { SiteFooter } from "./sections/SiteFooter";
 
 type Props = {
   initialData: IdeaIndex;
@@ -23,6 +24,7 @@ export default function IdeaVaultApp({ initialData }: Props) {
   const [query, setQuery] = useState("");
   const [selectedTopFolder, setSelectedTopFolder] = useState(ALL_FILTER);
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
+  const [theme, setTheme] = useState<"light" | "dark" | "rainbow">("light");
 
   useEffect(() => {
     const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -67,6 +69,11 @@ export default function IdeaVaultApp({ initialData }: Props) {
       );
     }
   }, [visibleIdea]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.theme = theme;
+  }, [theme]);
 
   function openIdea(idea: IdeaItem) {
     setVisibleIdea(idea);
@@ -149,6 +156,7 @@ export default function IdeaVaultApp({ initialData }: Props) {
             setSelectedCategory={setSelectedCategory}
           />
         )}
+        <SiteFooter theme={theme} onThemeChange={setTheme} />
       </div>
 
       {visibleIdea && (
