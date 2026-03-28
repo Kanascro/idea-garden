@@ -183,19 +183,19 @@ export function IdeasSection({
           {filtersOpen && (
             <div id="ideas-filters-panel" className="mt-3 space-y-4">
               <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
-                <label className="mb-2 flex items-center gap-2 text-sm font-medium text-ink/75">
-                  <Search className="h-4 w-4" />
-                  Search
-                </label>
-
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <label className="flex items-center gap-2 text-sm font-medium text-ink/75">
+                    <Search className="h-4 w-4" />
+                    Search
+                  </label>
+                </div>
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Title, content..."
-                  className="w-full rounded-2xl border border-white/70 bg-white px-4 py-3 text-sm outline-none ring-0 placeholder:text-ink/40"
+                  className="w-full rounded-2xl border border-white/70 bg-white px-4 py-3 text-sm outline-none ring-0 placeholder:text-ink/40 focus:border-violet-200 focus:ring-2 focus:ring-violet-100"
                 />
               </div>
-
               <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
                 <p className="mb-3 text-sm font-medium text-ink/75">Categories</p>
                 <div className="space-y-2">
@@ -203,13 +203,21 @@ export function IdeasSection({
                     <button
                       key={entry.name}
                       onClick={() => setSelectedTopFolder(entry.name)}
-                      className={`flex w-full items-center justify-between rounded-2xl px-3 py-2 text-sm transition ${selectedTopFolder === entry.name
-                        ? "bg-white shadow-neuSoft"
-                        : "bg-white/70 hover:bg-white"
+                      className={`flex w-full items-center justify-between rounded-2xl border px-3 py-2 text-sm transition ${selectedTopFolder === entry.name
+                        ? "border-violet-100 bg-violet-50 text-violet-900 shadow-neuInset ring-1 ring-violet-100"
+                        : "border-white/70 bg-white/70 text-ink hover:bg-white"
                         }`}
                     >
-                      <span>{entry.name}</span>
-                      <span className="rounded-full bg-mist px-2 py-0.5 text-xs text-ink/60">
+                      <span className="flex items-center gap-2">
+                        {entry.name}
+                      </span>
+
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-xs ${selectedTopFolder === entry.name
+                          ? "bg-violet-100 text-violet-700"
+                          : "bg-mist text-ink/60"
+                          }`}
+                      >
                         {entry.count}
                       </span>
                     </button>
@@ -219,17 +227,20 @@ export function IdeasSection({
 
               <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
                 <p className="mb-3 text-sm font-medium text-ink/75">Tags</p>
-                <div className="flex max-h-[28rem] flex-wrap gap-2 overflow-auto pr-1">
+                <div className="flex max-h-[28rem] flex-wrap gap-2 overflow-visible pr-1">
                   {categories.map((category) => (
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
-                      className={`rounded-full px-3 py-2 text-xs transition ${selectedCategory === category
-                        ? "bg-white shadow-neuSoft"
-                        : "border border-white/70 bg-white/55 hover:bg-white"
+                      className={`rounded-full border px-3 py-2 text-xs font-medium transition ${selectedCategory === category
+                        ? "border-violet-100 bg-violet-50 ring-1 ring-violet-100 text-violet-800 shadow-neuInset"
+                        : "border-white/70 bg-white/55 text-ink/80 hover:bg-white"
                         }`}
                     >
-                      {category}
+                      <span className="flex items-center gap-1.5">
+                        {selectedCategory === category}
+                        {category}
+                      </span>
                     </button>
                   ))}
                 </div>
