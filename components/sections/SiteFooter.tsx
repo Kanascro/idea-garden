@@ -20,18 +20,12 @@ const themeOptions: {
             swatchClass:
                 "bg-[linear-gradient(135deg,rgba(255,255,255,0.95)_0%,rgba(236,242,255,0.95)_45%,rgba(245,240,255,0.95)_100%)]",
         },
-        /*{
+        {
             value: "dark",
             label: "Dark theme",
             swatchClass:
                 "bg-[linear-gradient(135deg,rgb(15,23,42)_0%,rgb(30,41,59)_45%,rgb(51,65,85)_100%)]",
         },
-        {
-            value: "rainbow",
-            label: "Rainbow theme",
-            swatchClass:
-                "bg-[linear-gradient(135deg,rgb(255,214,224)_0%,rgb(255,236,179)_22%,rgb(214,245,214)_45%,rgb(209,233,255)_68%,rgb(232,214,255)_100%)]",
-        },*/
     ];
 
 function FooterLink({
@@ -48,7 +42,8 @@ function FooterLink({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/55 px-3 py-1.5 text-sm text-ink/78 shadow-neuSoft transition hover:bg-white"
+            className="theme-panel-strong theme-text-soft inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm shadow-neuSoft transition hover:bg-[var(--surface-strong)]"
+            style={{ borderColor: "var(--panel-border)" }}
         >
             {icon}
             <span className="inline-flex items-center gap-1.5 whitespace-nowrap">{children}</span>
@@ -58,9 +53,12 @@ function FooterLink({
 
 export function SiteFooter({ theme, onThemeChange }: Props) {
     return (
-        <footer className="rounded-[1.8rem] border border-white/60 glass-panel px-4 py-3 shadow-neu sm:px-5 sm:py-3.5">
+        <footer
+            className="glass-panel rounded-[1.8rem] border px-4 py-3 shadow-neu sm:px-5 sm:py-3.5"
+            style={{ borderColor: "var(--panel-border)" }}
+        >
             <div className="flex flex-col gap-3 sm:gap-2 lg:flex-row lg:items-center lg:justify-between">
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink/72">
+                <div className="theme-text-soft flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
                     <p className="inline-flex items-center gap-1.5">
                         <span>Made with</span>
                         <Heart className="h-3.5 w-3.5 fill-current" />
@@ -69,15 +67,15 @@ export function SiteFooter({ theme, onThemeChange }: Props) {
                             href="https://www.linkedin.com/in/marianne-perreault/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-medium text-ink transition hover:text-ink/80"
+                            className="theme-text font-medium transition hover:opacity-80"
                         >
                             Marianne Perreault
                         </a>
                     </p>
 
-                    <span className="hidden text-ink/30 lg:inline">•</span>
+                    <span className="theme-text-faint lg:inline">•</span>
 
-                    <p className="text-ink/62">
+                    <p className="theme-text-soft">
                         Open to collaborations.
                     </p>
                 </div>
@@ -95,9 +93,12 @@ export function SiteFooter({ theme, onThemeChange }: Props) {
                                     aria-label={option.label}
                                     title={option.label}
                                     className={`h-6 w-6 rounded-full border transition ${active
-                                        ? "scale-100 border-white shadow-neuSoft ring-2 ring-white/70"
-                                        : "border-white/60 hover:scale-[1.04] hover:border-white/90"
+                                        ? "scale-100 shadow-neuSoft ring-2 ring-[var(--accent-border)]"
+                                        : "hover:scale-[1.04]"
                                         } ${option.swatchClass}`}
+                                    style={{
+                                        borderColor: active ? "rgba(255,255,255,0.75)" : "var(--panel-border)",
+                                    }}
                                 />
                             );
                         })}

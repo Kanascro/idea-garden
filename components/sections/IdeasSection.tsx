@@ -168,7 +168,7 @@ export function IdeasSection({
       className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)]"
     >
       <aside
-        className={`relative self-start overflow-hidden rounded-[2rem] border border-white/60 glass-panel px-3 pt-2 shadow-neu lg:sticky lg:top-4 ${filtersOpen ? "pb-3" : "pb-2"
+        className={`glass-panel relative self-start overflow-hidden rounded-[2rem] px-3 pt-2 shadow-neu lg:sticky lg:top-4 ${filtersOpen ? "pb-3" : "pb-2"
           } lg:p-4`}
       >
         <div
@@ -177,18 +177,18 @@ export function IdeasSection({
         >
           <button
             onClick={() => setFiltersOpen((v) => !v)}
-            className={`${filtersOpen ? "mb-2" : "mb-0"} flex w-full items-center justify-between px-2 py-2 text-left text-sm font-medium lg:hidden`}
+            className={`${filtersOpen ? "mb-2" : "mb-0"} theme-text flex w-full items-center justify-between px-2 py-2 text-left text-sm font-medium lg:hidden`}
             aria-expanded={filtersOpen}
             aria-controls="ideas-filters-panel"
           >
             <span>Filters</span>
-            <span className="text-xl leading-none">{filtersOpen ? "−" : "+"}</span>
+            <span className="theme-text-soft text-xl leading-none">{filtersOpen ? "−" : "+"}</span>
           </button>
           {filtersOpen && (
             <div id="ideas-filters-panel" className="mt-3 space-y-4">
-              <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
+              <div className="theme-panel rounded-[1.5rem] p-3 shadow-neuInset">
                 <div className="mb-2 flex items-center justify-between gap-3">
-                  <label className="flex items-center gap-2 text-sm font-medium text-ink/75">
+                  <label className="theme-text-soft flex items-center gap-2 mb-3 text-sm font-medium">
                     <Search className="h-4 w-4" />
                     Search
                   </label>
@@ -197,20 +197,27 @@ export function IdeasSection({
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Title, content..."
-                  className="w-full rounded-2xl border border-white/70 bg-white px-4 py-3 text-sm outline-none ring-0 placeholder:text-ink/40 focus:border-violet-200 focus:ring-2 focus:ring-violet-100"
+                  className="theme-text w-full rounded-2xl border bg-[var(--surface-strong)] px-4 py-3 text-sm outline-none ring-0 placeholder:text-[color:var(--text-faint)] focus:ring-2 focus:ring-[var(--accent-border)]"
+                  style={{ borderColor: "var(--panel-border)" }}
                 />
               </div>
-              <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
-                <p className="mb-3 text-sm font-medium text-ink/75">Categories</p>
+              <div className="theme-panel rounded-[1.5rem] p-3 shadow-neuInset">
+                <p className="theme-text-soft mb-3 text-sm font-medium">Categories</p>
                 <div className="space-y-2">
                   {topFolders.map((entry) => (
                     <button
                       key={entry.name}
                       onClick={() => setSelectedTopFolder(entry.name)}
                       className={`flex w-full items-center justify-between rounded-2xl border px-3 py-2 text-sm transition ${selectedTopFolder === entry.name
-                        ? "border-violet-100 bg-violet-50 text-violet-900 shadow-neuInset ring-1 ring-violet-100"
-                        : "border-white/70 bg-white/70 text-ink hover:bg-white"
+                        ? "theme-accent shadow-neuInset ring-1 ring-[var(--accent-border)]"
+                        : "theme-panel-strong theme-text hover:bg-[var(--surface-strong)]"
                         }`}
+                      style={{
+                        borderColor:
+                          selectedTopFolder === entry.name
+                            ? "var(--accent-border)"
+                            : "var(--panel-border)",
+                      }}
                     >
                       <span className="flex items-center gap-2">
                         {entry.name}
@@ -218,8 +225,8 @@ export function IdeasSection({
 
                       <span
                         className={`rounded-full px-2 py-0.5 text-xs ${selectedTopFolder === entry.name
-                          ? "bg-violet-100 text-violet-700"
-                          : "bg-mist text-ink/60"
+                          ? "theme-accent-strong"
+                          : "theme-panel-soft theme-text-soft"
                           }`}
                       >
                         {entry.count}
@@ -229,20 +236,25 @@ export function IdeasSection({
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-white/70 bg-white/45 p-3 shadow-neuInset">
-                <p className="mb-3 text-sm font-medium text-ink/75">Tags</p>
+              <div className="theme-panel rounded-[1.5rem] p-3 shadow-neuInset">
+                <p className="theme-text-soft mb-3 text-sm font-medium">Tags</p>
                 <div className="flex flex-wrap gap-2 pr-1">
                   {categories.map((category) => (
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
                       className={`rounded-full border px-3 py-2 text-xs font-medium transition ${selectedCategory === category
-                        ? "border-violet-100 bg-violet-50 ring-1 ring-violet-100 text-violet-800 shadow-neuInset"
-                        : "border-white/70 bg-white/55 text-ink/80 hover:bg-white"
+                        ? "theme-accent shadow-neuInset ring-1 ring-[var(--accent-border)]"
+                        : "theme-panel-strong theme-text hover:bg-[var(--surface-strong)]"
                         }`}
+                      style={{
+                        borderColor:
+                          selectedCategory === category
+                            ? "var(--accent-border)"
+                            : "var(--panel-border)",
+                      }}
                     >
                       <span className="flex items-center gap-1.5">
-                        {selectedCategory === category}
                         {category}
                       </span>
                     </button>
@@ -254,13 +266,16 @@ export function IdeasSection({
         </div>
 
         <div
-          className={`pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/75 to-transparent transition-opacity duration-300 ${hasOverflow ? "opacity-100" : "opacity-0"
+          className={`pointer-events-none absolute bottom-0 left-0 right-0 h-32 transition-opacity duration-300 ${hasOverflow ? "opacity-100" : "opacity-0"
             }`}
+          style={{
+            background: "linear-gradient(to top, var(--surface-strong), transparent)",
+          }}
         />
       </aside>
 
-      <section className="rounded-[2rem] border border-white/60 glass-panel p-4 shadow-neu sm:p-5">
-        <p className="mb-4 text-sm text-ink/65">
+      <section className="glass-panel rounded-[2rem] p-4 shadow-neu sm:p-5">
+        <p className="theme-text-soft mb-4 text-sm">
           {columnsPerBatch === null
             ? "Loading ideas..."
             : `Showing ${visibleIdeas.length} of ${filteredIdeas.length} matching ideas${filteredIdeas.length !== ideas.length ? ` (${ideas.length} total)` : ""
@@ -275,14 +290,15 @@ export function IdeasSection({
             <button
               key={idea.id}
               onClick={() => onOpenIdea(idea)}
-              className={`group flex aspect-[0.92] flex-col justify-start rounded-[1.6rem] border border-white/70 bg-white/60 p-5 text-left shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-white sm:aspect-square sm:p-4 ${newlyAddedIds.includes(idea.id) ? "animate-idea-in" : ""
+              className={`theme-panel-strong group flex aspect-[0.92] flex-col justify-start rounded-[1.6rem] border p-5 text-left shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-[var(--surface-strong)] sm:aspect-square sm:p-4 ${newlyAddedIds.includes(idea.id) ? "animate-idea-in" : ""
                 }`}
+              style={{ borderColor: "var(--panel-border)" }}
             >
-              <p className="text-xs uppercase tracking-[0.18em] text-ink/45">
+              <p className="text-xs uppercase tracking-[0.18em] theme-text-faint">
                 {idea.categoryTrail[idea.categoryTrail.length - 1] ?? "Idea"}
               </p>
 
-              <h3 className="mt-3 line-clamp-4 text-base font-semibold leading-6 tracking-[0.06em] text-ink sm:text-lg">
+              <h3 className="theme-text mt-3 line-clamp-4 text-base font-semibold leading-6 tracking-[0.06em] sm:text-lg">
                 {idea.title}
               </h3>
             </button>
@@ -292,10 +308,14 @@ export function IdeasSection({
             <button
               key="more-card"
               onClick={showMoreIdeas}
-              className="group flex aspect-[0.92] flex-col items-center justify-center rounded-[1.6rem] border border-white/70 bg-[linear-gradient(145deg,rgba(255,238,244,0.9),rgba(255,245,248,0.85))] p-5 text-center shadow-neuSoft transition hover:-translate-y-0.5 hover:shadow-neu sm:aspect-square sm:p-4"
+              className="group flex aspect-[0.92] flex-col items-center justify-center rounded-[1.6rem] border p-5 text-center shadow-neuSoft transition hover:-translate-y-0.5 hover:shadow-neu sm:aspect-square sm:p-4"
+              style={{
+                borderColor: "var(--panel-border)",
+                background: "linear-gradient(145deg, var(--surface-strong), var(--surface-soft))",
+              }}
               aria-label="Load more ideas"
             >
-              <h3 className="mt-3 line-clamp-4 text-base font-semibold leading-6 tracking-[0.06em] text-ink sm:text-lg">
+              <h3 className="theme-text mt-3 line-clamp-4 text-base font-semibold leading-6 tracking-[0.06em] sm:text-lg">
                 Show more...
               </h3>
             </button>

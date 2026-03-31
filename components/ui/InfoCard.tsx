@@ -6,12 +6,12 @@ type Props = {
 
 export function InfoCard({ icon, title, body }: Props) {
     return (
-        <div className="h-full rounded-[2rem] border border-white/60 glass-panel p-5 shadow-neu">
-            <div className="mb-3 inline-flex rounded-2xl border border-white/70 bg-white/65 p-3 shadow-neuSoft">
+        <div className="theme-panel h-full rounded-[2rem] border p-5 shadow-neu">
+            <div className="theme-panel-strong mb-3 inline-flex rounded-2xl border p-3 shadow-neuSoft">
                 {icon}
             </div>
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="mt-2 leading-7 text-ink/74">{body}</p>
+            <h3 className="theme-text text-xl font-semibold">{title}</h3>
+            <p className="theme-text-soft mt-2 leading-7">{body}</p>
         </div>
     );
 }
