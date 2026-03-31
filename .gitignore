@@ -44,3 +44,6 @@ Thumbs.db
 
 # Syncthing
 .stfolder/
+
+# Dev
+components/components.zip
