@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-26T21:47:17.238Z",
-  "count": 286,
+  "generatedAt": "2026-04-01T18:05:03.635Z",
+  "count": 309,
   "ideas": [
     {
       "id": "futurism/digital-life/a-civic-connection-commons",
@@ -302,6 +302,27 @@
       "raw": "## Core idea\n\nReclaiming personal agency can initially feel heavy or disorienting because responsibility for one’s life direction shifts fully back into one’s own hands.\n\n## Structure\n\nWhen people adapt to relationships over long periods, they often carry emotional labor that stabilizes the connection—managing expectations, smoothing conflicts, or accommodating ambiguity. Speaking clearly about needs redistributes that responsibility. Each person must then confront their own choices, priorities, and limitations. This shift restores personal autonomy but also removes the familiar structure of shared avoidance. The emotional tone of early empowerment therefore tends to include quietness, gravity, and introspection rather than excitement.\n\n## Human signal\n\nThe weight that appears is not failure. It is the feeling of standing fully inside one’s own life again."
     },
     {
+      "id": "futurism/decision-making/agreement-on-goals-dispute-over-means",
+      "slug": "futurism/decision-making/agreement-on-goals-dispute-over-means",
+      "title": "Agreement on goals, dispute over means",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Agreement on goals, dispute over means.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Political process may work better if collective goals are identified first and methods are debated second.",
+        "structure": "Many conflicts fuse together values, goals, and implementation, making disagreement feel total. Separating them could reduce noise: people might share ends while differing on mechanisms. Scientific knowledge or domain expertise would then become more useful at the level of means rather than as a substitute for public values.",
+        "humanSignal": "There is a hope that politics could become less tribal if people discovered they want similar things before arguing about how to get there."
+      },
+      "raw": "## Core idea\n\nPolitical process may work better if collective goals are identified first and methods are debated second.\n\n## Structure\n\nMany conflicts fuse together values, goals, and implementation, making disagreement feel total. Separating them could reduce noise: people might share ends while differing on mechanisms. Scientific knowledge or domain expertise would then become more useful at the level of means rather than as a substitute for public values.\n\n## Human signal\n\nThere is a hope that politics could become less tribal if people discovered they want similar things before arguing about how to get there."
+    },
+    {
       "id": "futurism/digital-life/algorithmic-agency-in-social-media",
       "slug": "futurism/digital-life/algorithmic-agency-in-social-media",
       "title": "Algorithmic agency in social media",
@@ -361,6 +382,27 @@
         "humanSignal": "Compassion extends beyond affection toward animals and becomes respect for their independence."
       },
       "raw": "## Core idea\n\nA society may redefine relationships with animals by rejecting ownership and treating animals as autonomous beings rather than property.\n\n## Structure\n\nTraditional pet ownership often assumes that animals can be possessed, confined, and bred for human companionship. A rights-centered framework reframes this relationship as a form of domination, arguing that animals should not exist primarily as dependent objects within human households. Instead, animals would live within protected ecological systems where their autonomy and natural behaviors are prioritized. Human interaction would shift toward stewardship of habitats rather than private ownership.\n\n## Human signal\n\nCompassion extends beyond affection toward animals and becomes respect for their independence."
+    },
+    {
+      "id": "futurism/decision-making/anti-capture-through-adversarial-design",
+      "slug": "futurism/decision-making/anti-capture-through-adversarial-design",
+      "title": "Anti-capture through adversarial design",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Anti-capture through adversarial design.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Experts should be placed inside structures that assume capture is always possible.",
+        "structure": "Protection can come from forced plurality: mixed committees, rotating membership, public disclosure of funding and affiliations, conflict-of-interest firewalls, minority reports, and transparent publication of reasoning. No expert body should speak in one seamless voice if real disagreement exists. The system should preserve visible friction so that influence becomes harder to hide and easier to contest.",
+        "humanSignal": "Trust becomes less about faith in people and more about confidence in the design around them."
+      },
+      "raw": "## Core idea\n\nExperts should be placed inside structures that assume capture is always possible.\n\n## Structure\n\nProtection can come from forced plurality: mixed committees, rotating membership, public disclosure of funding and affiliations, conflict-of-interest firewalls, minority reports, and transparent publication of reasoning. No expert body should speak in one seamless voice if real disagreement exists. The system should preserve visible friction so that influence becomes harder to hide and easier to contest.\n\n## Human signal\n\nTrust becomes less about faith in people and more about confidence in the design around them."
     },
     {
       "id": "futurism/digital-life/anti-extraction-platform-principles",
@@ -479,6 +521,27 @@
       "raw": "## Core idea\n\nRelational compatibility increases when partners value both stability and exploration rather than embodying only one extreme.\n\n## Structure\n\nSome individuals orient primarily toward constant novelty, ambition, and expansion, while others prioritize calm routines and emotional steadiness. Partnerships become strained when one orientation consistently dominates the relationship. Compatibility grows when both individuals appreciate a rhythm that includes quiet presence as well as intellectual or creative engagement. This balance allows relationships to function both as sanctuary and as support for personal growth.\n\n## Human signal\n\nThe relationship becomes both a refuge and a place where new possibilities can emerge."
     },
     {
+      "id": "futurism/decision-making/bias-as-visible-layer-not-hidden-flaw",
+      "slug": "futurism/decision-making/bias-as-visible-layer-not-hidden-flaw",
+      "title": "Bias as visible layer, not hidden flaw",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Bias as visible layer, not hidden flaw.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "All knowledge carries perspective, and making that visible enhances rather than weakens understanding.",
+        "structure": "Historical and contemporary ideas are annotated with contextual tags—cultural, temporal, ideological—allowing users to interpret them through multiple lenses. Knowledge becomes a layered graph with ancestry and reinterpretation, where bias is navigated rather than erased.",
+        "humanSignal": "Truth is no longer treated as neutral ground, but as terrain shaped by many hands."
+      },
+      "raw": "## Core idea\n\nAll knowledge carries perspective, and making that visible enhances rather than weakens understanding.\n\n## Structure\n\nHistorical and contemporary ideas are annotated with contextual tags—cultural, temporal, ideological—allowing users to interpret them through multiple lenses. Knowledge becomes a layered graph with ancestry and reinterpretation, where bias is navigated rather than erased.\n\n## Human signal\n\nTruth is no longer treated as neutral ground, but as terrain shaped by many hands."
+    },
+    {
       "id": "futurism/environment-design/biodiversity-as-urban-infrastructure",
       "slug": "futurism/environment-design/biodiversity-as-urban-infrastructure",
       "title": "Biodiversity as urban infrastructure",
@@ -557,6 +620,25 @@
         "humanSignal": "The mind breathes through cycles of remembering and forgetting."
       },
       "raw": "## Core idea\n\nBiological intelligence remains functional because it forgets, while digital systems overwhelm because they attempt to remember everything.\n\n## Structure\n\nHuman memory naturally prunes, fades, and reconstructs information over time. This forgetting process prevents overload and allows meaningful patterns to emerge. Digital systems, by contrast, treat storage as permanent accumulation, producing environments where nothing decays and attention becomes saturated.\n\n## Human signal\n\nThe mind breathes through cycles of remembering and forgetting."
+    },
+    {
+      "id": "productivity/boredom-as-internal-system-conflict",
+      "slug": "productivity/boredom-as-internal-system-conflict",
+      "title": "Boredom as internal system conflict",
+      "path": [
+        "Productivity",
+        "Boredom as internal system conflict.md"
+      ],
+      "categoryTrail": [
+        "Productivity"
+      ],
+      "categoryKey": "Productivity",
+      "content": {
+        "coreIdea": "Boredom signals friction between different internal modes forced into a single framework.",
+        "structure": "One mode seeks order, clarity, and completion, while another pushes toward exploration, invention, and expansion. When both are compressed into a productivity system, neither operates well. This creates paralysis disguised as boredom. Recognizing multiple modes removes the pressure to resolve them into one.",
+        "humanSignal": "The tension becomes less personal and more structural. There is relief in seeing multiplicity instead of failure."
+      },
+      "raw": "## Core idea\n\nBoredom signals friction between different internal modes forced into a single framework.\n\n## Structure\n\nOne mode seeks order, clarity, and completion, while another pushes toward exploration, invention, and expansion. When both are compressed into a productivity system, neither operates well. This creates paralysis disguised as boredom. Recognizing multiple modes removes the pressure to resolve them into one.\n\n## Human signal\n\nThe tension becomes less personal and more structural. There is relief in seeing multiplicity instead of failure."
     },
     {
       "id": "relationships/boundaries-define-participation-not-control",
@@ -715,6 +797,48 @@
         "humanSignal": "Security grows when commitment is defined through shared understanding rather than silent assumptions."
       },
       "raw": "## Core idea\n\nRelationships benefit when personal expectations about commitment are consciously examined rather than assumed.\n\n## Structure\n\nIndividuals often carry implicit expectations about the level of emotional investment, stability, and long-term planning within a relationship. These expectations may not match those of the partner, especially in relationships exploring non-traditional structures such as openness. Clarifying what commitment means to each person—emotionally, practically, and temporally—helps align expectations with reality. When expectations remain unconscious, disappointment or confusion can arise even when neither partner has violated explicit agreements.\n\n## Human signal\n\nSecurity grows when commitment is defined through shared understanding rather than silent assumptions."
+    },
+    {
+      "id": "futurism/decision-making/committees-as-designed-collision",
+      "slug": "futurism/decision-making/committees-as-designed-collision",
+      "title": "Committees as designed collision",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Committees as designed collision.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Holistic committees should be built to create productive clash between kinds of knowledge, not false consensus.",
+        "structure": "A committee could include disciplinary experts, hybrid cross-domain thinkers, affected citizens, and dedicated translators of complexity. Their task would not be to erase disagreement quickly, but to expose where models conflict, where assumptions differ, and where trade-offs become unavoidable. This makes committees less like temples of expertise and more like structured engines of comparison.",
+        "humanSignal": "The image is not harmony first, but intelligent friction that produces a more complete picture."
+      },
+      "raw": "## Core idea\n\nHolistic committees should be built to create productive clash between kinds of knowledge, not false consensus.\n\n## Structure\n\nA committee could include disciplinary experts, hybrid cross-domain thinkers, affected citizens, and dedicated translators of complexity. Their task would not be to erase disagreement quickly, but to expose where models conflict, where assumptions differ, and where trade-offs become unavoidable. This makes committees less like temples of expertise and more like structured engines of comparison.\n\n## Human signal\n\nThe image is not harmony first, but intelligent friction that produces a more complete picture."
+    },
+    {
+      "id": "futurism/decision-making/committees-as-engines-of-structured-disagreement",
+      "slug": "futurism/decision-making/committees-as-engines-of-structured-disagreement",
+      "title": "Committees as engines of structured disagreement",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Committees as engines of structured disagreement.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Expert panels are designed to surface and work through disagreement rather than eliminate it.",
+        "structure": "Panels include diverse epistemic roles—specialists, systems thinkers, cultural lenses, contrarians—and operate through explicit tension. Outputs document conflicting models, unresolved questions, and trade-offs instead of forcing consensus. Structured friction becomes the mechanism through which more complete understanding emerges.",
+        "humanSignal": "Disagreement is reframed from failure into a productive force."
+      },
+      "raw": "## Core idea\n\nExpert panels are designed to surface and work through disagreement rather than eliminate it.\n\n## Structure\n\nPanels include diverse epistemic roles—specialists, systems thinkers, cultural lenses, contrarians—and operate through explicit tension. Outputs document conflicting models, unresolved questions, and trade-offs instead of forcing consensus. Structured friction becomes the mechanism through which more complete understanding emerges.\n\n## Human signal\n\nDisagreement is reframed from failure into a productive force."
     },
     {
       "id": "futurism/economy/common-structural-principle-across-bounded-markets",
@@ -1161,17 +1285,17 @@
       "raw": "## Core idea\n\nImagining alternative versions of reality exposes the hidden assumptions that shape human societies.\n\n## Structure\n\nWhen familiar conditions—such as language, physical traits, social norms, or technologies—are altered in thought experiments, the structures built around them become visible. What once seemed natural is revealed as contingent on specific biological, cultural, or technological circumstances.\n\n## Human signal\n\nThe moment something ordinary is imagined differently, its invisible scaffolding appears."
     },
     {
-      "id": "creativity/creation-as-a-mirror-space",
-      "slug": "creativity/creation-as-a-mirror-space",
+      "id": "productivity/creation-as-a-mirror-space",
+      "slug": "productivity/creation-as-a-mirror-space",
       "title": "Creation as a mirror space",
       "path": [
-        "Creativity",
+        "Productivity",
         "Creation as a mirror space.md"
       ],
       "categoryTrail": [
-        "Creativity"
+        "Productivity"
       ],
-      "categoryKey": "Creativity",
+      "categoryKey": "Productivity",
       "content": {
         "coreIdea": "The most generative creations do not dictate meaning but create a space where people can encounter themselves.",
         "structure": "Instead of delivering fixed conclusions or instructions, a creation provides context, textures, and conceptual structures that invite exploration. Whether in art, design, teaching, or systems, the work functions as an environment that stimulates reflection and interpretation rather than prescribing outcomes.",
@@ -1258,6 +1382,27 @@
         "humanSignal": "The interface behaves more like a brain than a database."
       },
       "raw": "## Core idea\n\nDigital knowledge structures can mimic the neural processes of strengthening, pruning, and association.\n\n## Structure\n\nIdeas that are revisited become more central, while neglected ones gradually weaken and disappear. Connections emerge through semantic relationships rather than rigid folders. The system also detects cognitive overload and slows interaction when attention becomes fragmented.\n\n## Human signal\n\nThe interface behaves more like a brain than a database."
+    },
+    {
+      "id": "futurism/decision-making/decentralized-credentials-as-contextual-trust",
+      "slug": "futurism/decision-making/decentralized-credentials-as-contextual-trust",
+      "title": "Decentralized credentials as contextual trust",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Decentralized credentials as contextual trust.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Expertise is tracked as a multidimensional, evolving reputation rather than a fixed title.",
+        "structure": "Credentials emerge from peer communities and reflect specific capacities—rigor, clarity, integration, predictive accuracy—rather than general status. They are revocable, contextual, and cumulative across contributions. This allows expertise to be both legible and fluid, supporting cross-disciplinary recognition without collapsing into hierarchy.",
+        "humanSignal": "Trust becomes granular and earned over time, not granted once and protected indefinitely."
+      },
+      "raw": "## Core idea\n\nExpertise is tracked as a multidimensional, evolving reputation rather than a fixed title.\n\n## Structure\n\nCredentials emerge from peer communities and reflect specific capacities—rigor, clarity, integration, predictive accuracy—rather than general status. They are revocable, contextual, and cumulative across contributions. This allows expertise to be both legible and fluid, supporting cross-disciplinary recognition without collapsing into hierarchy.\n\n## Human signal\n\nTrust becomes granular and earned over time, not granted once and protected indefinitely."
     },
     {
       "id": "relationships/decision-fatigue-during-vulnerability",
@@ -1614,6 +1759,27 @@
       "raw": "## Core idea\n\nSome individuals naturally operate at the intersection of imagination and relational design, combining visionary thinking with a desire to cultivate connection and possibility.\n\n## Structure\n\nThis identity integrates creative ideation with a systems-oriented awareness of how environments, relationships, and ideas influence human experience. The dreamer dimension generates possibilities, while the engineer dimension seeks structures that allow those possibilities to flourish. Together they produce a mode of living oriented toward expanding understanding, strengthening connection, and designing contexts where curiosity and emotional depth can thrive.\n\n## Human signal\n\nLife feels most authentic when both imagination and connection are actively shaping the world around it."
     },
     {
+      "id": "futurism/decision-making/dynamic-cartography-of-minds",
+      "slug": "futurism/decision-making/dynamic-cartography-of-minds",
+      "title": "Dynamic cartography of minds",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Dynamic cartography of minds.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Society can be organized around continuously evolving clusters of values rather than fixed identities or borders.",
+        "structure": "Daily micro-inputs generate a live map of preferences, priorities, and philosophical orientations. These clusters form fluid communities that can align, split, or experiment with different approaches. Governance becomes adaptive, responding to shifting value landscapes instead of static majorities.",
+        "humanSignal": "Belonging becomes something that moves with thought, not something imposed from outside."
+      },
+      "raw": "## Core idea\n\nSociety can be organized around continuously evolving clusters of values rather than fixed identities or borders.\n\n## Structure\n\nDaily micro-inputs generate a live map of preferences, priorities, and philosophical orientations. These clusters form fluid communities that can align, split, or experiment with different approaches. Governance becomes adaptive, responding to shifting value landscapes instead of static majorities.\n\n## Human signal\n\nBelonging becomes something that moves with thought, not something imposed from outside."
+    },
+    {
       "id": "futurism/digital-life/ecological-impulse-respect",
       "slug": "futurism/digital-life/ecological-impulse-respect",
       "title": "Ecological impulse respect",
@@ -1850,6 +2016,27 @@
       "raw": "## Core idea\n\nHuman traits often develop more effectively through environmental design than through direct attempts at self-discipline.\n\n## Structure\n\nThe “garden mentality” views behaviors and attributes as outcomes of surrounding conditions rather than isolated personal traits. Instead of trying to force specific qualities such as discipline, creativity, or kindness, the focus shifts to cultivating environments where those qualities naturally emerge. Adjustments to information sources, social networks, daily rhythms, and physical spaces gradually influence behavior in subtle but consistent ways. Personal development becomes ecological rather than force-driven.\n\n## Human signal\n\nGrowth begins to feel organic when the environment supports the qualities one hopes to cultivate."
     },
     {
+      "id": "futurism/decision-making/epistemic-ecosystem-as-governance-substrate",
+      "slug": "futurism/decision-making/epistemic-ecosystem-as-governance-substrate",
+      "title": "Epistemic ecosystem as governance substrate",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Epistemic ecosystem as governance substrate.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Knowledge production becomes a civic infrastructure designed for pluralism, not a pipeline toward singular truth.",
+        "structure": "The system treats knowledge as evolving, situated, and contestable, replacing static authority with dynamic interpretation. Multiple expert panels generate parallel models rather than unified conclusions, allowing citizens to navigate competing framings. Decision-making shifts from enforcing correctness to enabling informed exploration across perspectives.",
+        "humanSignal": "The orientation moves from “Who is right?” to “What lenses are available to think with?”"
+      },
+      "raw": "## Core idea\n\nKnowledge production becomes a civic infrastructure designed for pluralism, not a pipeline toward singular truth.\n\n## Structure\n\nThe system treats knowledge as evolving, situated, and contestable, replacing static authority with dynamic interpretation. Multiple expert panels generate parallel models rather than unified conclusions, allowing citizens to navigate competing framings. Decision-making shifts from enforcing correctness to enabling informed exploration across perspectives.\n\n## Human signal\n\nThe orientation moves from “Who is right?” to “What lenses are available to think with?”"
+    },
+    {
       "id": "futurism/religion/epistemic-humility-as-institutional-rule",
       "slug": "futurism/religion/epistemic-humility-as-institutional-rule",
       "title": "Epistemic humility as institutional rule",
@@ -1869,6 +2056,27 @@
         "humanSignal": "The emotional effect is relief. One can think deeply without joining an ideological army."
       },
       "raw": "## Core idea\n\nThe Meaning Commons avoids becoming a new secular orthodoxy by making humility structural rather than optional.\n\n## Structure\n\nThe danger in any institution devoted to meaning is that it can harden around preferred interpretations and begin treating dissent as threat. To prevent this, humility cannot be left as a personality trait of leaders. It has to be codified into format. Every framework taught must be accompanied by a “where it fails” component. Every discussion culture must treat critique as participation rather than sabotage. No school of thought gets to present itself as immune to distortion, historical misuse, or contextual limitation. This protects against the common secular failure mode where an anti-dogmatic space quietly develops its own unquestionable assumptions.\n\nThe result is a distinctive epistemic culture. People are invited into seriousness without being asked for submission. Intellectual life is restored as a public practice rather than a prestige game. Participants learn not only frameworks but a habit of handling frameworks lightly: to use them, compare them, test them, and release them when they overreach. That is very different from relativism. It is disciplined pluralism.\n\n## Human signal\n\nThe emotional effect is relief. One can think deeply without joining an ideological army."
+    },
+    {
+      "id": "futurism/decision-making/epistemic-immune-system-against-manipulation",
+      "slug": "futurism/decision-making/epistemic-immune-system-against-manipulation",
+      "title": "Epistemic immune system against manipulation",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Epistemic immune system against manipulation.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Information systems must actively detect and expose influence rather than assume neutrality.",
+        "structure": "Mechanisms like provenance tracing, multi-axis reputation, narrative audits, and protected contrarian spaces create visibility into how ideas form and spread. Instead of suppressing fringe views, the system contains and evaluates them, allowing valid insights to surface while tracking manipulation patterns.",
+        "humanSignal": "The aim is not purity of information, but resilience of minds navigating it."
+      },
+      "raw": "## Core idea\n\nInformation systems must actively detect and expose influence rather than assume neutrality.\n\n## Structure\n\nMechanisms like provenance tracing, multi-axis reputation, narrative audits, and protected contrarian spaces create visibility into how ideas form and spread. Instead of suppressing fringe views, the system contains and evaluates them, allowing valid insights to surface while tracking manipulation patterns.\n\n## Human signal\n\nThe aim is not purity of information, but resilience of minds navigating it."
     },
     {
       "id": "relationships/ethical-discomfort-as-guidance",
@@ -1926,6 +2134,27 @@
         "humanSignal": "The smallest details of ordinary life often contain the blueprint of an entire civilization."
       },
       "raw": "## Core idea\n\nLarge social systems become understandable when examined through everyday objects and routines.\n\n## Structure\n\nEconomic, political, and cultural structures manifest through daily practices—foods people eat, clothing they wear, ways cities are built, and rituals they follow. Observing these ordinary expressions reveals how broader systems shape daily life.\n\n## Human signal\n\nThe smallest details of ordinary life often contain the blueprint of an entire civilization."
+    },
+    {
+      "id": "futurism/decision-making/experts-as-instruments-not-rulers",
+      "slug": "futurism/decision-making/experts-as-instruments-not-rulers",
+      "title": "Experts as instruments, not rulers",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Experts as instruments, not rulers.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Experts may be necessary for discussing means, but their role must be designed so expertise informs decisions without becoming another channel of capture.",
+        "structure": "Scientific or technical questions require domain knowledge that general voting cannot replace. But once experts are inserted into the system, the same risks return: lobbying, institutional capture, status games, and hidden ideology. Expertise solves one problem while creating another, so the governance of experts becomes part of the political architecture.",
+        "humanSignal": "There is trust in knowledge here, but not innocence about the structures that surround people who hold it."
+      },
+      "raw": "## Core idea\n\nExperts may be necessary for discussing means, but their role must be designed so expertise informs decisions without becoming another channel of capture.\n\n## Structure\n\nScientific or technical questions require domain knowledge that general voting cannot replace. But once experts are inserted into the system, the same risks return: lobbying, institutional capture, status games, and hidden ideology. Expertise solves one problem while creating another, so the governance of experts becomes part of the political architecture.\n\n## Human signal\n\nThere is trust in knowledge here, but not innocence about the structures that surround people who hold it."
     },
     {
       "id": "relationships/fear-and-commitment-tension",
@@ -2118,6 +2347,25 @@
         "humanSignal": "Engagement tends to appear when people feel part of something that is already moving."
       },
       "raw": "## Core idea\n\nThe transition from disengagement to motivation often occurs when individuals move from isolated environments into participatory communities.\n\n## Structure\n\nIsolation amplifies uncertainty about how to begin, what to prioritize, and whether effort matters. Participation provides immediate feedback: others are working, progress is visible, and contribution has recognizable effects. This shift reframes effort from an internal battle to a shared activity with visible outcomes. The presence of others performing meaningful work creates a gravitational pull toward participation.\n\n## Human signal\n\nEngagement tends to appear when people feel part of something that is already moving."
+    },
+    {
+      "id": "philosophy/from-wrongness-to-difference",
+      "slug": "philosophy/from-wrongness-to-difference",
+      "title": "From wrongness to difference",
+      "path": [
+        "Philosophy",
+        "From wrongness to difference.md"
+      ],
+      "categoryTrail": [
+        "Philosophy"
+      ],
+      "categoryKey": "Philosophy",
+      "content": {
+        "coreIdea": "Releasing certainty allows interpretation to shift from error to difference.",
+        "structure": "When the need to be right loosens, ambiguity becomes tolerable. Interactions move from correction toward exploration, and disagreement no longer requires hierarchy. This reframing expands the range of possible understanding without forcing resolution.",
+        "humanSignal": "Letting go of certainty introduces openness, but also demands comfort with not knowing."
+      },
+      "raw": "## Core idea\n\nReleasing certainty allows interpretation to shift from error to difference.\n\n## Structure\n\nWhen the need to be right loosens, ambiguity becomes tolerable. Interactions move from correction toward exploration, and disagreement no longer requires hierarchy. This reframing expands the range of possible understanding without forcing resolution.\n\n## Human signal\n\nLetting go of certainty introduces openness, but also demands comfort with not knowing."
     },
     {
       "id": "futurism/interspecies/from-zoos-to-symbiotic-wildlife-commons",
@@ -2617,6 +2865,44 @@
       "raw": "## Core idea\n\nThe concept of consent can apply within the self: actions align best when internal willingness is present rather than when behavior is driven by pressure or negotiation.\n\n## Structure\n\nInternal consent describes the state in which an action arises from genuine readiness rather than from a rule imposed by self-discipline or emotional urgency. When behavior overrides hesitation or reluctance in order to achieve a psychological outcome, the relationship between intention and experience becomes strained. Respecting internal consent preserves coherence between desire, action, and emotional response. This coherence strengthens the reliability of internal signals over time.\n\n## Human signal\n\nAlignment is experienced when willingness precedes action rather than being forced after it."
     },
     {
+      "id": "philosophy/judgment-as-avoidance-of-vulnerability",
+      "slug": "philosophy/judgment-as-avoidance-of-vulnerability",
+      "title": "Judgment as avoidance of vulnerability",
+      "path": [
+        "Philosophy",
+        "Judgment as avoidance of vulnerability.md"
+      ],
+      "categoryTrail": [
+        "Philosophy"
+      ],
+      "categoryKey": "Philosophy",
+      "content": {
+        "coreIdea": "Judgment displaces vulnerability by converting internal discomfort into external evaluation.",
+        "structure": "Instead of naming fear or uncertainty, judgment assigns deficiency to others. This move protects the self from exposure while maintaining a sense of control. Emotional complexity is reduced to simplified labels that prevent deeper self-examination.",
+        "humanSignal": "There is a quieter truth beneath judgment: discomfort that has not been spoken directly."
+      },
+      "raw": "## Core idea\n\nJudgment displaces vulnerability by converting internal discomfort into external evaluation.\n\n## Structure\n\nInstead of naming fear or uncertainty, judgment assigns deficiency to others. This move protects the self from exposure while maintaining a sense of control. Emotional complexity is reduced to simplified labels that prevent deeper self-examination.\n\n## Human signal\n\nThere is a quieter truth beneath judgment: discomfort that has not been spoken directly."
+    },
+    {
+      "id": "philosophy/judgment-as-counterfeit-clarity",
+      "slug": "philosophy/judgment-as-counterfeit-clarity",
+      "title": "Judgment as counterfeit clarity",
+      "path": [
+        "Philosophy",
+        "Judgment as counterfeit clarity.md"
+      ],
+      "categoryTrail": [
+        "Philosophy"
+      ],
+      "categoryKey": "Philosophy",
+      "content": {
+        "coreIdea": "Judgment mimics clarity but is often fear expressed as certainty.",
+        "structure": "Judgment transforms personal reactions into universal claims, bypassing curiosity. It replaces uncertainty with fixed conclusions, creating a sense of resolution without deeper understanding. This shift closes inquiry and reinforces rigid interpretations of others and the world.",
+        "humanSignal": "Certainty feels grounding, but it often conceals an unwillingness to face ambiguity."
+      },
+      "raw": "## Core idea\n\nJudgment mimics clarity but is often fear expressed as certainty.\n\n## Structure\n\nJudgment transforms personal reactions into universal claims, bypassing curiosity. It replaces uncertainty with fixed conclusions, creating a sense of resolution without deeper understanding. This shift closes inquiry and reinforces rigid interpretations of others and the world.\n\n## Human signal\n\nCertainty feels grounding, but it often conceals an unwillingness to face ambiguity."
+    },
+    {
       "id": "futurism/safety/justice-as-future-harm-reduction",
       "slug": "futurism/safety/justice-as-future-harm-reduction",
       "title": "Justice as future harm reduction",
@@ -2678,6 +2964,27 @@
         "humanSignal": "Entering a knowledge space feels like walking into a gallery rather than searching a file cabinet."
       },
       "raw": "## Core idea\n\nIdeas can be organized as rotating exhibitions rather than permanent archives.\n\n## Structure\n\nConcepts are presented in temporary collections that open and close over time. Periodic curation becomes part of the thinking process, encouraging selection, reflection, and aesthetic coherence. Most collections remain temporary, preventing accumulation without interpretation.\n\n## Human signal\n\nEntering a knowledge space feels like walking into a gallery rather than searching a file cabinet."
+    },
+    {
+      "id": "futurism/decision-making/knowledge-translation-as-interface-design",
+      "slug": "futurism/decision-making/knowledge-translation-as-interface-design",
+      "title": "Knowledge translation as interface design",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Knowledge translation as interface design.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "Understanding requires dedicated roles that translate between cognitive worlds without flattening them.",
+        "structure": "Knowledge translators function as epistemic designers, shaping how ideas are accessed and compared. They expose assumptions, align vocabularies, and create multiple entry points—visual, narrative, technical—so users can engage at different depths. Translation happens during knowledge creation, not after, preserving nuance while expanding accessibility.",
+        "humanSignal": "Complexity is not reduced; it is made navigable."
+      },
+      "raw": "## Core idea\n\nUnderstanding requires dedicated roles that translate between cognitive worlds without flattening them.\n\n## Structure\n\nKnowledge translators function as epistemic designers, shaping how ideas are accessed and compared. They expose assumptions, align vocabularies, and create multiple entry points—visual, narrative, technical—so users can engage at different depths. Translation happens during knowledge creation, not after, preserving nuance while expanding accessibility.\n\n## Human signal\n\nComplexity is not reduced; it is made navigable."
     },
     {
       "id": "thinking-tools/letting-ideas-travel",
@@ -2842,11 +3149,11 @@
     {
       "id": "futurism/economy/markets-are-good-servants-but-terrible-philosophers",
       "slug": "futurism/economy/markets-are-good-servants-but-terrible-philosophers",
-      "title": "Markets are good servants but terrible philosophers.",
+      "title": "Markets are good servants but terrible philosophers",
       "path": [
         "Futurism",
         "Economy",
-        "Markets are good servants but terrible philosophers..md"
+        "Markets are good servants but terrible philosophers.md"
       ],
       "categoryTrail": [
         "Futurism",
@@ -2962,6 +3269,27 @@
         "humanSignal": "Markets create diversity of voices and forms without turning human attention into an extractable resource."
       },
       "raw": "## Core idea\n\nCultural infrastructure must be stabilized outside market pressures while markets remain spaces for creative variation that cannot manipulate psychological vulnerabilities.\n\n## Structure\n\nA society maintains publicly funded broadcasters, archives, libraries, and creator grant systems that guarantee baseline cultural production and access. Artists receive support through peer review, audience contribution pools, and public cultural institutions. Alongside this core, independent studios experiment with niche formats, subscription projects, and limited creative releases. However, systems that maximize engagement through manipulation are prohibited: no surveillance-based advertising, no algorithmic outrage amplification, and no design optimized for addictive infinite scrolling. Platforms refuse distribution to producers attempting to monetize polarization or psychological dependency.\n\n## Human signal\n\nMarkets create diversity of voices and forms without turning human attention into an extractable resource."
+    },
+    {
+      "id": "futurism/decision-making/mental-freedom-as-a-political-design-problem",
+      "slug": "futurism/decision-making/mental-freedom-as-a-political-design-problem",
+      "title": "Mental freedom as a political design problem",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "Mental freedom as a political design problem.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "A democratic system must protect citizens from lobbying, propaganda, and other forces that capture thought before choice is even made.",
+        "structure": "If opinion formation is manipulated upstream, voting cannot be fully free downstream. The question is not only how people vote, but how they arrive at beliefs at all. This includes suspicion toward obvious persuasion systems and also toward normalized institutions like school, which may shape thought under the guise of education.",
+        "humanSignal": "The concern is not just corruption of decisions, but corruption of consciousness itself."
+      },
+      "raw": "## Core idea\n\nA democratic system must protect citizens from lobbying, propaganda, and other forces that capture thought before choice is even made.\n\n## Structure\n\nIf opinion formation is manipulated upstream, voting cannot be fully free downstream. The question is not only how people vote, but how they arrive at beliefs at all. This includes suspicion toward obvious persuasion systems and also toward normalized institutions like school, which may shape thought under the guise of education.\n\n## Human signal\n\nThe concern is not just corruption of decisions, but corruption of consciousness itself."
     },
     {
       "id": "futurism/digital-life/metabolic-digital-ecosystems",
@@ -3210,6 +3538,25 @@
       "raw": "## Core idea\n\nAny institution built to meet existential, relational, and ritual needs becomes dangerous when tied to growth, branding, or engagement incentives. Meaning infrastructure must be decommodified to remain trustworthy.\n\n## Structure\n\nCapitalist incentives corrupt these functions in specific ways. If belonging becomes a product, retention matters more than freedom. If grief becomes a market, emotional dependence becomes monetizable. If ritual becomes content, spectacle outcompetes depth. If moral language becomes branding, institutions begin optimizing for visibility rather than integrity. This is why public funding and strict transparency are not side details but constitutive design features. Budgets, donations, and influence channels must be visible. Donations caps prevent wealthy patrons from converting generosity into governance power. There should be no engagement optimization metrics analogous to platform addiction logic.\n\nDecommodification changes the institution’s emotional posture. It does not need to keep people activated, anxious, loyal, or enthralled in order to survive. It can afford to let participation ebb and flow. It can remain boring where boring is kind, gentle where gentleness is enough, and spacious where sales logic would demand stickiness.\n\n## Human signal\n\nPeople can finally tell the difference between being cared for and being cultivated as a resource."
     },
     {
+      "id": "productivity/non-completion-as-generative-method",
+      "slug": "productivity/non-completion-as-generative-method",
+      "title": "Non-completion as generative method",
+      "path": [
+        "Productivity",
+        "Non-completion as generative method.md"
+      ],
+      "categoryTrail": [
+        "Productivity"
+      ],
+      "categoryKey": "Productivity",
+      "content": {
+        "coreIdea": "Intentional incompletion can generate momentum more effectively than forced completion.",
+        "structure": "Partial engagement disrupts the expectation of finishing and lowers resistance. This creates continuity across time, where tasks evolve rather than conclude. Movement becomes distributed, allowing ideas and actions to accumulate without pressure.",
+        "humanSignal": "Unfinished states feel open rather than stressful. There is freedom in leaving things mid-gesture."
+      },
+      "raw": "## Core idea\n\nIntentional incompletion can generate momentum more effectively than forced completion.\n\n## Structure\n\nPartial engagement disrupts the expectation of finishing and lowers resistance. This creates continuity across time, where tasks evolve rather than conclude. Movement becomes distributed, allowing ideas and actions to accumulate without pressure.\n\n## Human signal\n\nUnfinished states feel open rather than stressful. There is freedom in leaving things mid-gesture."
+    },
+    {
       "id": "futurism/education/non-prescriptive-knowledge-sharing",
       "slug": "futurism/education/non-prescriptive-knowledge-sharing",
       "title": "Non-prescriptive knowledge sharing",
@@ -3412,6 +3759,25 @@
         "humanSignal": "Education becomes an act of building knowledge together rather than consuming information."
       },
       "raw": "## Core idea\n\nStudents can become co-creators of educational content rather than passive recipients of predetermined curricula.\n\n## Structure\n\nIn collaborative learning systems, participants actively document insights, build shared knowledge resources, and develop projects that contribute to collective understanding. Educational material evolves dynamically as learners add perspectives, refine explanations, and test ideas through practice. This approach recognizes that knowledge grows through participation rather than simple transmission from authority to student.\n\n## Human signal\n\nEducation becomes an act of building knowledge together rather than consuming information."
+    },
+    {
+      "id": "productivity/permission-as-operating-system",
+      "slug": "productivity/permission-as-operating-system",
+      "title": "Permission as operating system",
+      "path": [
+        "Productivity",
+        "Permission as operating system.md"
+      ],
+      "categoryTrail": [
+        "Productivity"
+      ],
+      "categoryKey": "Productivity",
+      "content": {
+        "coreIdea": "Flow depends more on permission than discipline.",
+        "structure": "Allowing inconsistency, abandonment, and unconventional engagement reduces internal resistance. This creates conditions where action emerges naturally rather than being enforced. The system becomes curiosity-driven instead of control-driven.",
+        "humanSignal": "There is a sense of autonomy and play. Productivity becomes something lived rather than imposed."
+      },
+      "raw": "## Core idea\n\nFlow depends more on permission than discipline.\n\n## Structure\n\nAllowing inconsistency, abandonment, and unconventional engagement reduces internal resistance. This creates conditions where action emerges naturally rather than being enforced. The system becomes curiosity-driven instead of control-driven.\n\n## Human signal\n\nThere is a sense of autonomy and play. Productivity becomes something lived rather than imposed."
     },
     {
       "id": "self-evolution/permission-to-be-where-you-are",
@@ -4080,6 +4446,25 @@
       "raw": "## Core idea\n\nTools become durable cultural institutions when they evolve into simple rituals that people repeat across relationships and generations.\n\n## Structure\n\nA ritual transforms occasional use into habitual practice. For relational tools, this might include structured check-in conversations, shared agreement reviews, reflection nights, or periodic emotional audits. Once a ritual format becomes widely recognizable, distribution occurs organically: partners introduce it to new partners, therapists introduce it to clients, and communities normalize it as standard practice. The key is simplicity and repeatability. A ritual must be easy enough to perform without instruction and meaningful enough that people want to return to it.\n\n## Human signal\n\nThe activity becomes part of relational culture—something people do together rather than something they buy."
     },
     {
+      "id": "productivity/rotation-over-optimization",
+      "slug": "productivity/rotation-over-optimization",
+      "title": "Rotation over optimization",
+      "path": [
+        "Productivity",
+        "Rotation over optimization.md"
+      ],
+      "categoryTrail": [
+        "Productivity"
+      ],
+      "categoryKey": "Productivity",
+      "content": {
+        "coreIdea": "Sustained engagement comes from rotating between domains, not optimizing within one.",
+        "structure": "Each domain requires a different cognitive and emotional posture. Attempting to unify them under efficiency creates resistance. Rotational movement allows each to activate in its own time, maintaining overall momentum without collapse.",
+        "humanSignal": "There is lightness in shifting instead of forcing. Movement replaces pressure."
+      },
+      "raw": "## Core idea\n\nSustained engagement comes from rotating between domains, not optimizing within one.\n\n## Structure\n\nEach domain requires a different cognitive and emotional posture. Attempting to unify them under efficiency creates resistance. Rotational movement allows each to activate in its own time, maintaining overall momentum without collapse.\n\n## Human signal\n\nThere is lightness in shifting instead of forcing. Movement replaces pressure."
+    },
+    {
       "id": "futurism/religion/sacred-time-without-sacred-ruler",
       "slug": "futurism/religion/sacred-time-without-sacred-ruler",
       "title": "Sacred time without sacred ruler",
@@ -4600,6 +4985,25 @@
         "humanSignal": "No one is disposable, and no one is left to recover alone."
       },
       "raw": "## Core idea\n\nHealing from harm becomes a shared social task rather than a private burden carried by individuals alone.\n\n## Structure\n\nTraditional systems often isolate both the harmed and the person who caused harm. A capacity-based model instead mobilizes community support around both sides. Those affected receive resources and care until their adaptation load decreases. Those responsible receive guidance, education, and accountability structures that expand their behavioral options. This collective response recognizes that emotional recovery and behavioral change rarely occur in isolation. Communities function as stabilizing environments that absorb stress without allowing individuals to collapse under it.\n\n## Human signal\n\nNo one is disposable, and no one is left to recover alone."
+    },
+    {
+      "id": "productivity/tasks-as-entities-rather-than-obligations",
+      "slug": "productivity/tasks-as-entities-rather-than-obligations",
+      "title": "Tasks as entities rather than obligations",
+      "path": [
+        "Productivity",
+        "Tasks as entities rather than obligations.md"
+      ],
+      "categoryTrail": [
+        "Productivity"
+      ],
+      "categoryKey": "Productivity",
+      "content": {
+        "coreIdea": "Renaming tasks as characters transforms obligation into relational engagement.",
+        "structure": "Each task becomes an entity with presence, mood, and implied movement. This allows prioritization based on aliveness rather than urgency. The interaction shifts from execution to encounter, making engagement dynamic instead of linear.",
+        "humanSignal": "The list becomes strange and playful. There is permission to follow curiosity instead of forcing action."
+      },
+      "raw": "## Core idea\n\nRenaming tasks as characters transforms obligation into relational engagement.\n\n## Structure\n\nEach task becomes an entity with presence, mood, and implied movement. This allows prioritization based on aliveness rather than urgency. The interaction shifts from execution to encounter, making engagement dynamic instead of linear.\n\n## Human signal\n\nThe list becomes strange and playful. There is permission to follow curiosity instead of forcing action."
     },
     {
       "id": "thinking-tools/the-acceptance-of-forgetting",
@@ -5181,6 +5585,25 @@
       "raw": "## Core idea\n\nWhen individuals reclaim alignment in relationships, emotional change often follows a recognizable sequence of pause, grief, reorganization, and eventual forward movement.\n\n## Structure\n\nThe first stage occurs when truth is spoken and previous adaptations are released. This often produces a temporary pause as the nervous system processes the implications. Grief follows as expectations and imagined futures dissolve. During this period the psyche reorganizes its sense of identity, agency, and relational boundaries. Only after this internal restructuring stabilizes does forward motion become possible, whether through renewed partnership under new conditions or through separation. Each phase serves a regulatory function that helps integrate clarity without overwhelming the individual.\n\n## Human signal\n\nStillness and detachment are not signs of failure in the process. They are the system gathering strength before the next step emerges."
     },
     {
+      "id": "philosophy/the-social-performance-of-discernment",
+      "slug": "philosophy/the-social-performance-of-discernment",
+      "title": "The social performance of discernment",
+      "path": [
+        "Philosophy",
+        "The social performance of discernment.md"
+      ],
+      "categoryTrail": [
+        "Philosophy"
+      ],
+      "categoryKey": "Philosophy",
+      "content": {
+        "coreIdea": "Discernment is often used to signal identity rather than to deepen understanding.",
+        "structure": "Concepts like taste, standards, or intelligence can function as coded judgments that establish separation. These signals reinforce self-image by contrasting against others, creating a refined but limiting identity structure. The result is a constrained worldview that appears elevated while remaining closed.",
+        "humanSignal": "What presents as growth may instead be a subtle form of self-protection."
+      },
+      "raw": "## Core idea\n\nDiscernment is often used to signal identity rather than to deepen understanding.\n\n## Structure\n\nConcepts like taste, standards, or intelligence can function as coded judgments that establish separation. These signals reinforce self-image by contrasting against others, creating a refined but limiting identity structure. The result is a constrained worldview that appears elevated while remaining closed.\n\n## Human signal\n\nWhat presents as growth may instead be a subtle form of self-protection."
+    },
+    {
       "id": "philosophy/the-social-usefulness-of-villains",
       "slug": "philosophy/the-social-usefulness-of-villains",
       "title": "The social usefulness of villains",
@@ -5236,6 +5659,25 @@
         "humanSignal": "Dissolving the villain does not excuse harm. It removes the costume that makes human behavior simpler than it is."
       },
       "raw": "## Core idea\n\nThe category of the “villain” is a storytelling device that culture mistakes for a real type of human being.\n\n## Structure\n\nStories train us to sort the world into heroes and villains, but this binary is a narrative convenience rather than a description of human psychology. Harm emerges from pain, fear, scarcity, disconnection, and unprocessed trauma, not from a class of inherently evil people. Natural disasters show the same principle: destructive events occur without moral intention. Harm can be real without requiring mythologized antagonists.\n\n## Human signal\n\nDissolving the villain does not excuse harm. It removes the costume that makes human behavior simpler than it is."
+    },
+    {
+      "id": "productivity/to-do-list-as-multiverse-map",
+      "slug": "productivity/to-do-list-as-multiverse-map",
+      "title": "To-do list as multiverse map",
+      "path": [
+        "Productivity",
+        "To-do list as multiverse map.md"
+      ],
+      "categoryTrail": [
+        "Productivity"
+      ],
+      "categoryKey": "Productivity",
+      "content": {
+        "coreIdea": "A to-do list is not a set of tasks but a fragmented map of multiple competing realities trying to materialize.",
+        "structure": "Each item represents a different world with its own logic and desire. Boredom emerges when these worlds are flattened into a single system of completion and control. Reframing tasks as portals restores dimensionality and reveals underlying tensions between creation, maintenance, and meaning-making. The list becomes navigable when treated as a landscape rather than a queue.",
+        "humanSignal": "The shift replaces dull obligation with curiosity. The list stops being oppressive and starts feeling alive, unstable, and slightly magical."
+      },
+      "raw": "## Core idea\n\nA to-do list is not a set of tasks but a fragmented map of multiple competing realities trying to materialize.\n\n## Structure\n\nEach item represents a different world with its own logic and desire. Boredom emerges when these worlds are flattened into a single system of completion and control. Reframing tasks as portals restores dimensionality and reveals underlying tensions between creation, maintenance, and meaning-making. The list becomes navigable when treated as a landscape rather than a queue.\n\n## Human signal\n\nThe shift replaces dull obligation with curiosity. The list stops being oppressive and starts feeling alive, unstable, and slightly magical."
     },
     {
       "id": "self-evolution/transforming-comparison-into-inspiration",
@@ -5674,6 +6116,27 @@
         "humanSignal": "Social systems decay when prestige incentives contradict official rules. Cultural admiration must shift before regulatory boundaries can hold."
       },
       "raw": "## Core idea\n\nRules restricting logos or advertising cannot succeed if underlying prestige structures still reward wealth accumulation.\n\n## Structure\n\nWhen wealth remains the main indicator of power and credibility, individuals continuously invent new signals of status. These signals may be subtle aesthetics, insider cultural markers, or coded consumption patterns. Even if explicit branding disappears, elites create new forms of symbolic distinction. Capitalism succeeded historically not by inventing status hierarchies but by converting them into scalable monetary proxies. Therefore a society that merely restricts marketing while leaving wealth as the dominant prestige signal inevitably reproduces inequality through alternative markers.\n\n## Human signal\n\nSocial systems decay when prestige incentives contradict official rules. Cultural admiration must shift before regulatory boundaries can hold."
+    },
+    {
+      "id": "futurism/decision-making/world-voting-as-values-cartography",
+      "slug": "futurism/decision-making/world-voting-as-values-cartography",
+      "title": "World voting as values cartography",
+      "path": [
+        "Futurism",
+        "Decision-making",
+        "World voting as values cartography.md"
+      ],
+      "categoryTrail": [
+        "Futurism",
+        "Decision-making"
+      ],
+      "categoryKey": "Futurism / Decision-making",
+      "content": {
+        "coreIdea": "A civic app could map what people actually value by asking them to vote on specific matters directly rather than through party identity.",
+        "structure": "The system would treat politics as a live cartography of public priorities, not a competition between packaged ideologies. Citizens would first reveal value alignments and desired goals issue by issue. Only after that would political discussion move toward the practical question of means.",
+        "humanSignal": "The impulse here is to see people more clearly than parties do and to build politics around what minds actually contain."
+      },
+      "raw": "## Core idea\n\nA civic app could map what people actually value by asking them to vote on specific matters directly rather than through party identity.\n\n## Structure\n\nThe system would treat politics as a live cartography of public priorities, not a competition between packaged ideologies. Citizens would first reveal value alignments and desired goals issue by issue. Only after that would political discussion move toward the practical question of means.\n\n## Human signal\n\nThe impulse here is to see people more clearly than parties do and to build politics around what minds actually contain."
     },
     {
       "id": "thinking-tools/writing-as-cognitive-scaffolding",
