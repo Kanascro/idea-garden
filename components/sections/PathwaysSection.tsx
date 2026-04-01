@@ -5,11 +5,9 @@ import {
     Film,
     Gamepad2,
     GraduationCap,
-    Hammer,
     Mic2,
     Palette,
     PenSquare,
-    Sparkles,
     Users,
 } from "lucide-react";
 

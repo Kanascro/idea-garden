@@ -284,8 +284,8 @@ export function IdeasSection({
         </aside>
 
         <section className="glass-panel rounded-[2rem] p-4 shadow-neu sm:p-5">
-          <div className="flex items-center justify-between">
-            <p className="theme-text-soft mb-4 text-sm">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <p className="theme-text-soft text-sm">
               {columnsPerBatch === null
                 ? "Loading ideas..."
                 : `Showing ${visibleIdeas.length} of ${filteredIdeas.length} matching ideas${filteredIdeas.length !== ideas.length ? ` (${ideas.length} total)` : ""
@@ -298,7 +298,7 @@ export function IdeasSection({
               aria-label="Open a random idea"
               className="theme-panel-strong theme-text inline-flex h-10 w-10 items-center justify-center rounded-full shadow-neuSoft transition hover:-translate-y-0.5 hover:bg-[var(--surface-strong)]"
             >
-              <Dices className="h-4 w-4" />
+              <Dices className="h-5 w-5" />
             </button>
           </div>
           <div
@@ -330,7 +330,7 @@ export function IdeasSection({
                 className="group flex aspect-[0.92] flex-col items-center justify-center rounded-[1.6rem] border p-5 text-center shadow-neuSoft transition hover:-translate-y-0.5 hover:shadow-neu sm:aspect-square sm:p-4"
                 style={{
                   borderColor: "var(--panel-border)",
-                  background: "linear-gradient(145deg, var(--surface-strong), var(--surface-soft))",
+                  background: "linear-gradient(145deg, var(--accent-bg), var(--surface-soft))",
                 }}
                 aria-label="Load more ideas"
               >
