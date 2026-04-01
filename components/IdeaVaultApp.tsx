@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { Share2, X } from "lucide-react";
 import type { IdeaIndex, IdeaItem } from "../lib/types";
 import { HomeHeader } from "./sections/HomeHeader";
-import { AboutSection } from "./sections/AboutSection";
-import { UsesSection } from "./sections/UsesSection";
 import { IdeasSection } from "./sections/IdeasSection";
+import { PathwaysSection } from "./sections/PathwaysSection";
+import { GrowthSection } from "./sections/GrowthSection";
+import { AboutSection } from "./sections/AboutSection";
 import { ALL_FILTER } from "./sections/hooks/useIdeaSearch";
 import { SiteFooter } from "./sections/SiteFooter";
 
@@ -14,7 +15,11 @@ type Props = {
   initialData: IdeaIndex;
 };
 
-export type HomeSection = "about" | "ideas" | "uses";
+export type HomeSection =
+  | "home"
+  | "pathways"
+  | "growth"
+  | "about";
 
 function shuffleIdeas<T>(items: T[]) {
   const next = [...items];
@@ -28,18 +33,42 @@ function shuffleIdeas<T>(items: T[]) {
 }
 
 export default function IdeaVaultApp({ initialData }: Props) {
-  const [homeSection, setHomeSection] = useState<HomeSection>("ideas");
+  const getInitialSection = (): HomeSection => {
+    if (typeof window === "undefined") return "home";
+
+    const tab = new URLSearchParams(window.location.search).get("tab");
+
+    if (
+      tab === "home" ||
+      tab === "about" ||
+      tab === "pathways" ||
+      tab === "growth"
+    ) {
+      return tab;
+    }
+
+    return "home";
+  };
+
+  const [homeSection, setHomeSection] = useState<HomeSection>(getInitialSection);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("tab", homeSection);
+    window.history.replaceState({}, "", url.toString());
+  }, [homeSection]);
+
   const [visibleIdea, setVisibleIdea] = useState<IdeaItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedTopFolder, setSelectedTopFolder] = useState(ALL_FILTER);
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
-  const [theme, setTheme] = useState<"light" | "dark" | "rainbow">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const saved = window.localStorage.getItem("idea-garden-theme");
-    if (saved === "light" || saved === "dark" || saved === "rainbow") {
+    if (saved === "light" || saved === "dark") {
       setTheme(saved);
       document.documentElement.dataset.theme = saved;
     }
@@ -141,7 +170,7 @@ export default function IdeaVaultApp({ initialData }: Props) {
     const categoryPrefix =
       index <= 0 ? ALL_FILTER : trail.slice(1, index + 1).join(" / ");
 
-    setHomeSection("ideas");
+    setHomeSection("home");
     setQuery("");
     setSelectedTopFolder(topFolder);
     setSelectedCategory(categoryPrefix);
@@ -165,11 +194,15 @@ export default function IdeaVaultApp({ initialData }: Props) {
         />
 
         {homeSection === "about" && <AboutSection />}
-        {homeSection === "uses" && <UsesSection />}
-        {homeSection === "ideas" && (
+        {homeSection === "pathways" && <PathwaysSection />}
+        {homeSection === "growth" && (
+          <GrowthSection onNavigateSection={setHomeSection} />
+        )}
+        {homeSection === "home" && (
           <IdeasSection
             ideas={shuffledIdeas}
             onOpenIdea={openIdea}
+            onSurpriseIdea={openIdea}
             query={query}
             setQuery={setQuery}
             selectedTopFolder={selectedTopFolder}

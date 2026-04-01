@@ -2,7 +2,7 @@
 
 import { Github, Heart, Linkedin, Coffee, BookHeart } from "lucide-react";
 
-type ThemeName = "light" | "dark" | "rainbow";
+type ThemeName = "light" | "dark";
 
 type Props = {
     theme: ThemeName;
@@ -116,7 +116,7 @@ export function SiteFooter({ theme, onThemeChange }: Props) {
 
                     <FooterLink href="https://ko-fi.com/marianneperreault">
                         <Coffee className="h-3.5 w-3.5" />
-                        Donate
+                        Contribute
                     </FooterLink>
 
                     <FooterLink href="https://unlicense.org/">

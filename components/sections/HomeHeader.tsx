@@ -27,7 +27,16 @@ export function HomeHeader({ homeSection, onChangeSection }: Props) {
                     </p>
                 </div>
 
-                <div className="theme-panel grid grid-cols-3 gap-3 rounded-[1.5rem] p-2 shadow-neuSoft">
+                <div className="theme-panel grid grid-cols-2 gap-3 rounded-[1.5rem] p-2 shadow-neuSoft sm:grid-cols-4">
+                    <button
+                        onClick={() => onChangeSection("home")}
+                        className={`theme-text rounded-[1.15rem] px-4 py-3 text-sm font-medium transition ${homeSection === "home"
+                            ? "theme-panel-strong shadow-neuSoft"
+                            : "hover:bg-[var(--surface-strong)]"
+                            }`}
+                    >
+                        Home
+                    </button>
                     <button
                         onClick={() => onChangeSection("about")}
                         className={`theme-text rounded-[1.15rem] px-4 py-3 text-sm font-medium transition ${homeSection === "about"
@@ -37,25 +46,23 @@ export function HomeHeader({ homeSection, onChangeSection }: Props) {
                     >
                         About
                     </button>
-
                     <button
-                        onClick={() => onChangeSection("ideas")}
-                        className={`theme-text rounded-[1.15rem] px-4 py-3 text-sm font-medium transition ${homeSection === "ideas"
+                        onClick={() => onChangeSection("pathways")}
+                        className={`theme-text rounded-[1.15rem] px-4 py-3 text-sm font-medium transition ${homeSection === "pathways"
                             ? "theme-panel-strong shadow-neuSoft"
                             : "hover:bg-[var(--surface-strong)]"
                             }`}
                     >
-                        Ideas
+                        Pathways
                     </button>
-
                     <button
-                        onClick={() => onChangeSection("uses")}
-                        className={`theme-text rounded-[1.15rem] px-4 py-3 text-sm font-medium transition ${homeSection === "uses"
+                        onClick={() => onChangeSection("growth")}
+                        className={`theme-text rounded-[1.15rem] px-4 py-3 text-sm font-medium transition ${homeSection === "growth"
                             ? "theme-panel-strong shadow-neuSoft"
                             : "hover:bg-[var(--surface-strong)]"
                             }`}
                     >
-                        Uses
+                        Growth
                     </button>
                 </div>
             </div>
