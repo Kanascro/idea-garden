@@ -113,6 +113,10 @@ export function GrowthSection({ onNavigateSection }: GrowthSectionProps) {
         window.open("https://forms.gle/DQwBiimt9VFaTnZF7", "_blank", "noopener,noreferrer");
     }
 
+    function goToNewsletterWaitlist() {
+        window.open("https://forms.gle/6TFWNCp75WPkJNJw9", "_blank", "noopener,noreferrer");
+    }
+
     return (
         <section className="space-y-4">
             <section className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
@@ -231,11 +235,12 @@ export function GrowthSection({ onNavigateSection }: GrowthSectionProps) {
                     <div className="mt-6 space-y-3">
                         {amplifiers.map((item) => {
                             const Icon = item.icon;
+                            const isNewsletter = item.title === "Newsletter";
 
                             return (
                                 <div
                                     key={item.title}
-                                    className="rounded-[1.4rem] border p-4 opacity-60 shadow-neuInset"
+                                    className="rounded-[1.4rem] border p-4 shadow-neuInset"
                                     style={{
                                         borderColor: "var(--panel-border)",
                                         background: "var(--surface-strong)",
@@ -249,14 +254,36 @@ export function GrowthSection({ onNavigateSection }: GrowthSectionProps) {
                                             <Icon className="h-4 w-4" />
                                         </div>
 
-                                        <div className="min-w-0">
-                                            <h4 className="theme-text text-base font-semibold">
+                                        <div className="min-w-0 flex-1">
+                                            <h4
+                                                className="theme-text text-base font-semibold opacity-70"
+                                            >
                                                 {item.title}
                                             </h4>
 
-                                            <p className="theme-text-soft mt-1 text-sm leading-6">
+                                            <p
+                                                className="theme-text-soft mt-1 text-sm leading-6 opacity-70"
+                                            >
                                                 {item.description}
                                             </p>
+
+                                            {isNewsletter && (
+                                                <a
+                                                    href="https://forms.gle/6TFWNCp75WPkJNJw9"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="mt-3 inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                                                    style={{
+                                                        borderColor: "var(--panel-border)",
+                                                        background: "var(--surface)",
+                                                        color: "var(--text-strong)",
+                                                        boxShadow: "0 6px 16px rgba(0,0,0,0.12)",
+                                                    }}
+                                                >
+                                                    Get on the waitlist
+                                                    <ArrowUpRight className="h-4 w-4" />
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
