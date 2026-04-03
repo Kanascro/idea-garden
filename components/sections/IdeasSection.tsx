@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Search, Dices } from "lucide-react";
+import { Search, Dices, ArrowUpRight, X } from "lucide-react";
 import type { IdeaItem } from "../../lib/types";
 import { useIdeaSearch, ALL_FILTER } from "./hooks/useIdeaSearch";
 import { useResponsiveFilters } from "./hooks/useResponsiveFilters";
@@ -56,6 +56,16 @@ export function IdeasSection({
     ? Math.max(visibleCount - 1, 0)
     : visibleCount;
   const visibleIdeas = filteredIdeas.slice(0, visibleIdeaCount);
+
+  const NEWSLETTER_BANNER_STORAGE_KEY = "idea-garden-newsletter-banner-dismissed";
+  const [newsletterBannerDismissed, setNewsletterBannerDismissed] = useState(true);
+  const [newsletterBannerReady, setNewsletterBannerReady] = useState(false);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem(NEWSLETTER_BANNER_STORAGE_KEY);
+    setNewsletterBannerDismissed(saved === "true");
+    setNewsletterBannerReady(true);
+  }, []);
 
   useEffect(() => {
     setSelectedCategory(ALL_FILTER);
@@ -171,8 +181,67 @@ export function IdeasSection({
     onSurpriseIdea(randomIdea);
   }
 
+  function dismissNewsletterBanner() {
+    setNewsletterBannerDismissed(true);
+    window.localStorage.setItem(NEWSLETTER_BANNER_STORAGE_KEY, "true");
+  }
+
+  const showNewsletterBanner =
+    newsletterBannerReady && !newsletterBannerDismissed;
+
+  function renderNewsletterBanner() {
+    if (!showNewsletterBanner) return null;
+
+    return (
+      <div
+        className="rounded-[1.6rem] border p-4 shadow-neuSoft sm:p-5"
+        style={{ borderColor: "var(--accent-border)" }}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em]">
+              Upcoming newsletter
+            </p>
+
+            <p className="theme-text-soft mt-2 max-w-2xl text-sm leading-6">
+              If enough people are interested, a newsletter will be launched to share updates on the project and occasional new ideas. This is simply a way to stay in touch without needing to revisit the site.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            aria-label="Dismiss newsletter banner"
+            onClick={dismissNewsletterBanner}
+            className="theme-text-soft rounded-full p-2 transition hover:bg-[var(--surface-strong)] hover:text-[var(--text-strong)]"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="mt-4">
+          <a
+            href="https://forms.gle/6TFWNCp75WPkJNJw9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="theme-text inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium shadow-neuSoft transition hover:-translate-y-0.5"
+            style={{
+              borderColor: "var(--accent-border)",
+              background: "var(--surface)",
+            }}
+          >
+            Add your e-mail on the waitlist
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <section id="ideas-section" className="space-y-4">
+      <div className="lg:hidden">
+        {renderNewsletterBanner()}
+      </div>
       <section
         className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)]"
       >
@@ -284,6 +353,9 @@ export function IdeasSection({
         </aside>
 
         <section className="glass-panel rounded-[2rem] p-4 shadow-neu sm:p-5">
+          <div className="mb-4 hidden lg:block">
+            {renderNewsletterBanner()}
+          </div>
           <div className="mb-4 flex items-center justify-between gap-3">
             <p className="theme-text-soft text-sm">
               {columnsPerBatch === null
